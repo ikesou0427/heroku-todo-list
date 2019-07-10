@@ -5,6 +5,6 @@ app.get('/',(req,res) => {
   res.send('Welcome to Express')
 });
 
-app.listen(PORT(,() => {
+app.listen(PORT,() => {
   console.log('start server port:5000')
 });
