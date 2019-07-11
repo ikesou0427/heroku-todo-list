@@ -40,8 +40,10 @@ const PORT = process.env.PORT || 5000;
 
 // login 
 app.get('/login', (req, res) => {
+  message = req.session.message;
+  req.session.message = '';
   res.render('login.ejs', {
-    message: ''
+    message: message
   });
 });
 
@@ -54,11 +56,8 @@ app.post('/signIn', (req, res) => {
       done();
       err && console.error(err);
       if (result.rowCount == 0) {
-        app.redirect('/login', (req, res) => {
-          res.render('login.ejs', {
-            message: 'There was a problem with your login.'
-          });
-        });
+        req.session.message = 'There was a problem with your login.';
+        app.redirect('/login');
       } else {
         req.session.userId = req.body.userId;
         req.session.password = req.body.password;
