@@ -52,12 +52,12 @@ app.post('/signIn', (req, res) => {
   // todo xss対策
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
   pool.connect((err, client, done) => {
-    client.query(sql, app,(err, result) => {
+    client.query(sql,(err, result) => {
       done();
       err && console.error(err);
-      console.log(app);
       if (result.rowCount == 0) {
         req.session.message = 'There was a problem with your login.';
+        let app = express();
         app.redirect('/login');
       } else {
         req.session.userId = req.body.userId;
