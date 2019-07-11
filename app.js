@@ -9,8 +9,9 @@ const ejs = require('ejs');
 app.engine('ejs', ejs.renderFile);
 
 // DB
+app.use(express.static('config'));
 const pg = require("pg");
-const config = require("./config");
+const config = require("config");
 console.log(config);
 const pool = new pg.Pool(config.db.postgres);
 
