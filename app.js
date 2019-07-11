@@ -51,7 +51,7 @@ app.get('/login', (req, res) => {
 app.post('/signIn', (req, res) => {
   //入力チェック
   if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
-    req.body.message = 'Please type using half-width characters.';
+    req.session.message = 'Please type using half-width characters.';
     res.redirect('/');
   };
 
