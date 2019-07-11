@@ -54,7 +54,7 @@ app.post('/signIn', (req, res) => {
   console.log(req.body.userId,req.body.password);
   req.session.userId = req.body.userId;
   req.session.password = req.body.password;
-  // res.redirect('/');
+  res.redirect('/');
 });
 
 
