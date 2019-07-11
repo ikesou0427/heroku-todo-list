@@ -37,22 +37,15 @@ app.get('/', (req, res) => {
   if (!common.checkSignIn(req, res)) {
     res.redirect('/login');
   }
-  res.render('index.ejs', {
-    title: 'Test',
-    content: 'This page is Test page!!'
-  });
+  res.render('index.ejs');
 });
 
 // form page
 app.get('/form', (req, res) => {
   if (!common.checkSignIn(req, res)) {
-    res.render('form.ejs', {
-      title: 'Test',
-      content: 'This page is form page!!'
-    });
-  } else {
     res.render('/login');
   }
+  res.render('form.ejs');
 });
 
 
