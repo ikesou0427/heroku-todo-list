@@ -55,6 +55,7 @@ app.post('/signIn', (req, res) => {
     client.query(sql, app,(err, result) => {
       done();
       err && console.error(err);
+      console.log(app);
       if (result.rowCount == 0) {
         req.session.message = 'There was a problem with your login.';
         app.redirect('/login');
