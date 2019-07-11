@@ -47,9 +47,25 @@ app.get('/login', (req, res) => {
 
 // sign-in
 app.post('/signIn', (req, res) => {
-  req.session.userId = req.body.userId;
-  req.session.password = req.body.password;
-  res.redirect('/');
+  // todo xss対策
+  let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
+  pool.connect((err, client, done) => {
+    client.query(sql, param, (err, result) => {
+      done();
+      err && console.error(err);
+      if (result.rowCount == 0) {
+        app.get('/login', (req, res) => {
+          res.render('login.ejs', {
+            message: 'There was a problem with your login.'
+          });
+        });
+      } else {
+        req.session.userId = req.body.userId;
+        req.session.password = req.body.password;
+        res.redirect('/');
+      };
+    });
+  });
 });
 
 // index 
