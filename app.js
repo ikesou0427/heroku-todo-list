@@ -32,7 +32,9 @@ app.get('/', (req, res) => {
   if (!common.checkSignIn(req, res)) {
     res.redirect('/login');
   }
-  res.render('index.ejs');
+  res.render('index.ejs', {
+    userId: req.session.userId
+  });
 });
 
 // form page
@@ -46,7 +48,7 @@ app.get('/form', (req, res) => {
 
 // sign in
 app.post('/signIn', (req, res) => {
-  req.session.name = req.query.name;
+  req.session.userId = req.query.userId;
   req.session.password = req.query.password;
   res.redirect('/');
 });
