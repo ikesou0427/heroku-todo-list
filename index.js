@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const app = express();
 app.engine('ejs', ejs.renderFile);
 
+// publicフォルダ読み込み
 app.use(express.static('public'));
 
 const PORT = process.env.PORT || 5000;
@@ -19,8 +20,9 @@ app.get('/',(req,res) => {
 //})
 //})
 
-app.get('/test', (req, res) => {
-  res.render('test.ejs', {
+app.get('/index', (req, res) => {
+  
+  res.render('index.ejs', {
     title: 'Test',
     content: 'This page is Test page!!'
   });
