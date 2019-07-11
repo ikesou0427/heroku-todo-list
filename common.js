@@ -1,4 +1,4 @@
-exports.checkSesson = function (req, res) {
+exports.checkSignIn = function (req, res) {
     result = '';
     if (req.session.password != undefined && req.session.name != undefined) {
         result = true;

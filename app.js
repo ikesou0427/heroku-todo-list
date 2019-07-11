@@ -30,27 +30,23 @@ const PORT = process.env.PORT || 5000;
 
 // login page
 app.get('/login', (req, res) => {
-  res.render('login.ejs', {
-    id: 'google'
-  });
+  res.render('login.ejs');
 });
 
 // index page
 app.get('/', (req, res) => {
-  if (common.checkSesson(req,res)) {
-    res.render('index.ejs', {
-      title: 'Test',
-      content: 'This page is Test page!!'
-    });
-  } else {
-    req.session.password = 1234;
+  if (common.checkSignIn(req, res) == false) {
     res.redirect('/login');
   }
+  res.render('index.ejs', {
+    title: 'Test',
+    content: 'This page is Test page!!'
+  });
 });
 
 // form page
 app.get('/form', (req, res) => {
-  if (common.checkSesson(req, res)) {
+  if (common.checkSignIn(req, res)) {
     res.render('form.ejs', {
       title: 'Test',
       content: 'This page is form page!!'
@@ -59,6 +55,14 @@ app.get('/form', (req, res) => {
     res.render('/login');
   }
 });
+
+
+
+
+
+
+
+
 
 app.listen(PORT,() => {
   console.log('start server port:5000')
