@@ -8,5 +8,5 @@ exports.checkSignIn = function (req, res) {
 
 exports.isHalfWidthCharacters = function (str) {
     let str = toString(str);
-    return result = (str.match(/^[A-Za-z0-9]*$/));
+    return str.match(/^[A-Za-z0-9]*$/);
 }
