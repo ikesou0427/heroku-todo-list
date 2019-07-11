@@ -51,9 +51,9 @@ app.get('/form', (req, res) => {
 
 // sign in
 app.post('/signIn', (req, res) => {
-  console.log(req.query.userId,req.query.password);
-  req.session.userId = req.query.userId;
-  req.session.password = req.query.password;
+  console.log(req.body.userId,req.body.password);
+  req.session.userId = req.body.userId;
+  req.session.password = req.body.password;
   res.redirect('/');
 });
 
