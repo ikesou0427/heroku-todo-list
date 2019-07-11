@@ -37,8 +37,6 @@ app.get('/login', (req, res) => {
 
 // index page
 app.get('/', (req, res) => {
-  console.log(req.session.password, req.session.name);
-  console.log(common.checkSesson(req, res));
   if (common.checkSesson(req,res)) {
     res.render('index.ejs', {
       title: 'Test',
@@ -50,7 +48,6 @@ app.get('/', (req, res) => {
   }
 });
 
-
 // form page
 app.get('/form', (req, res) => {
   if (common.checkSesson(req, res)) {
@@ -59,8 +56,6 @@ app.get('/form', (req, res) => {
       content: 'This page is form page!!'
     });
   } else {
-    req.session.name = 'hoge';
-    req.session.password = 1234;
     res.render('/login');
   }
 });
