@@ -41,7 +41,9 @@ const PORT = process.env.PORT || 5000;
 
 // login 
 app.get('/login', (req, res) => {
-  res.render('login.ejs');
+  res.render('login.ejs', {
+    message: ''
+  });
 });
 
 // sign-in
