@@ -57,8 +57,7 @@ app.post('/signIn', (req, res) => {
       err && console.error(err);
       if (result.rowCount == 0) {
         req.session.message = 'There was a problem with your login.';
-        let app = express();
-        app.redirect('/login');
+        res.redirect('/login');
       } else {
         req.session.userId = req.body.userId;
         req.session.password = req.body.password;
