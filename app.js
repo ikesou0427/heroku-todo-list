@@ -53,18 +53,18 @@ app.post('/signIn', (req, res) => {
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
   pool.connect((err, client, done) => {
     client.query(sql)
-      .then(result => {
-        if (result.rowCount == 0) {
-          req.session.message = 'There was a problem with your login.';
-          res.redirect('/login');
-        } else {
-          req.session.userId = req.body.userId;
-          req.session.password = req.body.password;
-          res.redirect('/');
-        };
-      })
-      .catch(err => console.error(err));  
-    });
+    .then(result => {
+      if (result.rowCount == 0) {
+        req.session.message = 'There was a problem with your login.';
+        res.redirect('/login');
+      } else {
+        req.session.userId = req.body.userId;
+        req.session.password = req.body.password;
+        res.redirect('/');
+      };
+    })
+    .catch(err => console.error(err));  
+  });
 });
 
 // index 
