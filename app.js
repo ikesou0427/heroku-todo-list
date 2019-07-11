@@ -29,6 +29,7 @@ const PORT = process.env.PORT || 5000;
 
 // index page
 app.get('/', (req, res) => {
+  console.log(req.session.password, req.session.name);
   if (common.checkSesson(req,res)) {
     res.render('index.ejs', {
       title: 'Test',
