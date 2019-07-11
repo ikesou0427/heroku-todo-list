@@ -49,7 +49,12 @@ app.get('/login', (req, res) => {
 
 // sign-in
 app.post('/signIn', (req, res) => {
-  // todo xss対策
+  //入力チェック
+  if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
+    req.body.message = 'Please type using half-width characters.';
+    res.redirect('/');
+  };
+
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
   pool.connect((err, client, done) => {
     client.query(sql)
