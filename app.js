@@ -27,6 +27,14 @@ const PORT = process.env.PORT || 5000;
 //})
 //})
 
+
+// login page
+app.get('/login', (req, res) => {
+  res.render('login.ejs', {
+    id: 'google'
+  });
+});
+
 // index page
 app.get('/', (req, res) => {
   console.log(req.session.password, req.session.name);
@@ -37,18 +45,11 @@ app.get('/', (req, res) => {
       content: 'This page is Test page!!'
     });
   } else {
-    req.session.name = 'hoge';
     req.session.password = 1234;
     res.redirect('/login');
   }
 });
 
-// login page
-app.get('/login', (req, res) => {
-  res.render('login.ejs', {
-    id: 'google'
-  });
-});
 
 // form page
 app.get('/form', (req, res) => {
