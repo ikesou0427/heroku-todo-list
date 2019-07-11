@@ -44,6 +44,13 @@ app.get('/form', (req, res) => {
 });
 
 
+// sign in
+app.post('/signIn', (req, res) => {
+  req.session.name = req.query.name;
+  req.session.password = req.query.password;
+  res.redirect('/');
+});
+
 
 
 
