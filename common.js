@@ -5,5 +5,3 @@ exports.checkSignIn = function (req, res) {
     }
     return result;
 }
-
-exports.checkAccount
