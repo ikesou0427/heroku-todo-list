@@ -5,16 +5,16 @@
 const express = require('express');
 const createError = require('http-errors');
 const app = express();
-
-// DB設定
-const pg = require("pg");
-const config = require("config");
-const pool = new pg.Pool(config.db.postgres);
-
 const ejs = require('ejs');
 app.engine('ejs', ejs.renderFile);
 
-//session設定
+// DB
+const pg = require("pg");
+const config = require("config");
+console.log(config);
+const pool = new pg.Pool(config.db.postgres);
+
+//session
 const session = require('express-session');
 const session_opt = {
   secret: 'keyboard cat',
