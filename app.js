@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
   } else {
     req.session.name = 'hoge';
     req.session.password = 1234;
-    res.redirect('login.ejs');
+    res.redirect('/login');
   }
 });
 
@@ -60,9 +60,7 @@ app.get('/form', (req, res) => {
   } else {
     req.session.name = 'hoge';
     req.session.password = 1234;
-    res.render('login.ejs', {
-      id: 'google'
-    });
+    res.render('/login');
   }
 });
 
