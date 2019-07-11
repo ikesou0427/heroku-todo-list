@@ -56,10 +56,6 @@ app.post('/signIn', (req, res) => {
   res.redirect('/');
 });
 
-app.get('/hoge', ()=> {
-  console.log('hoge');
-})
-
 
 
 //TODO not foundページ作成
