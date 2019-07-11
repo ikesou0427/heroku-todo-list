@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 // form page
 app.get('/form', (req, res) => {
   if (!common.checkSignIn(req, res)) {
-    res.render('/login');
+    res.redirect('/login');
   }
   res.render('form.ejs');
 });
