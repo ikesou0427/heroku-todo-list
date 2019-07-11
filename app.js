@@ -53,6 +53,7 @@ app.post('/signIn', (req, res) => {
   if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
     req.session.message = 'Please type using half-width characters.';
     res.redirect('/');
+    return;
   };
 
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
