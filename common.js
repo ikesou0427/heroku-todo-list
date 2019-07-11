@@ -6,7 +6,4 @@ exports.checkSignIn = function (req, res) {
     return result;
 }
 
-exports.isHalfWidthCharacters = function (str) {
-    let str = toString(str);
-    return str.match(/^[A-Za-z0-9]*$/);
-}
+exports.isHalfWidthCharacters = str => str.match(/^[A-Za-z0-9]*$/);
