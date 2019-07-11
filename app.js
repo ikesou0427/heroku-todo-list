@@ -52,11 +52,9 @@ app.post('/signIn', (req, res) => {
   pool.connect((err, client, done) => {
     client.query(sql, (err, result) => {
       done();
-      console.log('ここはどうでしょう');
       err && console.error(err);
       if (result.rowCount == 0) {
-        console.log('ここはどうでしょう!!');
-        app.get('/login', (req, res) => {
+        app.redirect('/login', (req, res) => {
           res.render('login.ejs', {
             message: 'There was a problem with your login.'
           });
