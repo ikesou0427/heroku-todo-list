@@ -27,7 +27,6 @@ const PORT = process.env.PORT || 5000;
 //})
 //})
 
-
 // login page
 app.get('/login', (req, res) => {
   res.render('login.ejs');
@@ -35,7 +34,7 @@ app.get('/login', (req, res) => {
 
 // index page
 app.get('/', (req, res) => {
-  if (common.checkSignIn(req, res) == false) {
+  if (!common.checkSignIn(req, res)) {
     res.redirect('/login');
   }
   res.render('index.ejs', {
@@ -46,7 +45,7 @@ app.get('/', (req, res) => {
 
 // form page
 app.get('/form', (req, res) => {
-  if (common.checkSignIn(req, res)) {
+  if (!common.checkSignIn(req, res)) {
     res.render('form.ejs', {
       title: 'Test',
       content: 'This page is form page!!'
