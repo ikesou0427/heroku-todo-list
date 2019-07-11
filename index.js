@@ -27,6 +27,7 @@ const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
   console.log(req.session.message);
+  console.log(req.session.pass);
   res.render('index.ejs', {
     title: 'Test',
     content: 'This page is Test page!!'
@@ -37,6 +38,13 @@ app.get('/login', (req, res) => {
   req.session.message = 'hogehogeしようぜ!'
   res.render('login.ejs', {
     hoge: req.session.message
+  });
+});
+
+app.get('/form', (req, res) => {
+  req.session.pass = 'ここはformだ!'
+  res.render('form.ejs', {
+    hugaaa: req.session.pass
   });
 });
 
