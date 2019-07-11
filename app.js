@@ -21,12 +21,6 @@ const common = require("./common.js");
 
 const PORT = process.env.PORT || 5000;
 
-// app.get('pass',(req,res) => {
-//  <処理（別jsファイルでの処理を挟むか、ここでrenderする変数の処理をする）>
-//  res.render('ejsファイル',{
-//  仮変数: 中身
-//})
-//})
 
 // login page
 app.get('/login', (req, res) => {
@@ -54,7 +48,7 @@ app.get('/form', (req, res) => {
 
 
 
-
+//TODO: not foundページ作成
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
