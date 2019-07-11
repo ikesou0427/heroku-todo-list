@@ -51,7 +51,6 @@ app.get('/form', (req, res) => {
 
 // sign in
 app.post('/signIn', (req, res) => {
-  console.log(req.body.userId,req.body.password);
   req.session.userId = req.body.userId;
   req.session.password = req.body.password;
   res.redirect('/');
@@ -61,7 +60,7 @@ app.post('/signIn', (req, res) => {
 
 
 
-//TODO: not foundページ作成
+//TODO not foundページ作成
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
