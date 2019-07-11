@@ -10,7 +10,7 @@ app.engine('ejs', ejs.renderFile);
 
 // DB
 const pg = require("pg");
-const config = require("config");
+const config = require("./config");
 console.log(config);
 const pool = new pg.Pool(config.db.postgres);
 
