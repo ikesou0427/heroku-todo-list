@@ -31,7 +31,14 @@ app.get('/', (req, res) => {
     title: 'Test',
     content: 'This page is Test page!!'
   });
-})
+});
+
+app.get('/login', (req, res) => {
+  req.session.message = 'hogehogeしようぜ!'
+  res.render('login.ejs', {
+    hoge: req.session.message
+  });
+});
 
 app.listen(PORT,() => {
   console.log('start server port:5000')
