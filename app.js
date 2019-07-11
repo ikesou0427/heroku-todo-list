@@ -11,10 +11,6 @@ app.engine('ejs', ejs.renderFile);
 // DB
 const pg = require("pg");
 const config = require("config");
-console.log(config);
-console.log(process.env.NODE_ENV)
-console.log("NODE_ENV=%s", process.env.NODE_ENV);
-console.log('----------------');
 const pool = new pg.Pool(config.db.postgres);
 
 //session

@@ -1,0 +1,13 @@
+{
+    "db": 
+    {
+        "postgres": 
+        {
+            "host": "ec2-54-235-96-48.compute-1.amazonaws.com",
+            "user": "zwnezcagxjdlwo",
+            "password": "667b77acf02c17ee8a4db07fe315dabe44d014810c102d986f687e9233d86379",
+            "port": "5432",
+            "database": "d8pjkblmh257d2"
+        }
+    }
+}
