@@ -51,10 +51,11 @@ app.post('/signIn', (req, res) => {
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
   pool.connect((err, client, done) => {
     client.query(sql, (err, result) => {
-      console.log('ここはどうでしょう');
       done();
+      console.log('ここはどうでしょう');
       err && console.error(err);
       if (result.rowCount == 0) {
+        console.log('ここはどうでしょう!!');
         app.get('/login', (req, res) => {
           res.render('login.ejs', {
             message: 'There was a problem with your login.'
@@ -73,10 +74,11 @@ app.post('/signIn', (req, res) => {
 app.get('/', (req, res) => {
   if (!common.checkSignIn(req, res)) {
     res.redirect('/login');
+  } else {
+    res.render('index.ejs', {
+      userId: req.session.userId
+    });
   }
-  res.render('index.ejs', {
-    userId: req.session.userId
-  });
 });
 
 // form 
