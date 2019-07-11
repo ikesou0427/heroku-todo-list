@@ -1,8 +1,8 @@
 exports.checkSesson = function (req, res) {
-    result = false;
+    result = '';
     if (req.session.password != undefined && req.session.name != undefined) {
         result = true;
     }
-    console.log('-----common-----', '\n', result,'-------------');
+    console.log('-----common-----', '\n', result, '\n','-------------');
     return result;
 }
