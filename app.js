@@ -15,6 +15,8 @@ app.use(session(session_opt));
 
 // publicフォルダ読み込み
 app.use(express.static('public'));
+//共通の処理
+const common = require("./common.js");
 
 const PORT = process.env.PORT || 5000;
 
@@ -25,27 +27,41 @@ const PORT = process.env.PORT || 5000;
 //})
 //})
 
+
 app.get('/', (req, res) => {
-  console.log(req.session.message);
-  console.log(req.session.pass);
-  res.render('index.ejs', {
-    title: 'Test',
-    content: 'This page is Test page!!'
-  });
+  if (common.checkSesson(req,res)) {
+    res.render('index.ejs', {
+      title: 'Test',
+      content: 'This page is Test page!!'
+    });
+  } else {
+    req.session.name = 'hoge';
+    req.session.password = 1234;
+    res.render('login.ejs', {
+      id: 'google'
+    });
+  }
 });
 
 app.get('/login', (req, res) => {
-  req.session.message = 'hogehogeしようぜ!'
   res.render('login.ejs', {
-    hoge: req.session.message
+    id: 'google'
   });
 });
 
 app.get('/form', (req, res) => {
-  req.session.pass = 'ここはformだ!'
-  res.render('form.ejs', {
-    hugaaa: req.session.pass
-  });
+  if (common.checkSesson(req, res)) {
+    res.render('form.ejs', {
+      title: 'Test',
+      content: 'This page is form page!!'
+    });
+  } else {
+    req.session.name = 'hoge';
+    req.session.password = 1234;
+    res.render('login.ejs', {
+      id: 'google'
+    });
+  }
 });
 
 app.listen(PORT,() => {
