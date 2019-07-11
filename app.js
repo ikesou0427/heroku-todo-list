@@ -1,10 +1,20 @@
+//################
+//# module読み込み
+//################
+
 const express = require('express');
 const createError = require('http-errors');
 const app = express();
 
+// DB設定
+const pg = require("pg");
+const config = require("config");
+const pool = new pg.Pool(config.db.postgres);
+
 const ejs = require('ejs');
 app.engine('ejs', ejs.renderFile);
 
+//session設定
 const session = require('express-session');
 const session_opt = {
   secret: 'keyboard cat',
@@ -19,18 +29,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // publicフォルダ読み込み
 app.use(express.static('public'));
+
 //共通の処理
 const common = require("./common.js");
 
 const PORT = process.env.PORT || 5000;
 
+//###########
+//# routing 
+//###########
 
-// login page
+// login 
 app.get('/login', (req, res) => {
   res.render('login.ejs');
 });
 
-// index page
+// sign-in
+app.post('/signIn', (req, res) => {
+  req.session.userId = req.body.userId;
+  req.session.password = req.body.password;
+  res.redirect('/');
+});
+
+// index 
 app.get('/', (req, res) => {
   if (!common.checkSignIn(req, res)) {
     res.redirect('/login');
@@ -40,20 +61,12 @@ app.get('/', (req, res) => {
   });
 });
 
-// form page
+// form 
 app.get('/form', (req, res) => {
   if (!common.checkSignIn(req, res)) {
     res.redirect('/login');
   }
   res.render('form.ejs');
-});
-
-
-// sign in
-app.post('/signIn', (req, res) => {
-  req.session.userId = req.body.userId;
-  req.session.password = req.body.password;
-  res.redirect('/');
 });
 
 
