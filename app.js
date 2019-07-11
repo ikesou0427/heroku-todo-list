@@ -42,7 +42,7 @@ const PORT = process.env.PORT || 5000;
 app.get('/login', (req, res) => {
   message = req.session.message;
   req.session.message = '';
-  res.render('login.ejs', {
+  return res.render('login.ejs', {
     message: message
   });
 });
@@ -52,8 +52,7 @@ app.post('/signIn', (req, res) => {
   //入力チェック
   if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
     req.session.message = 'Please type using half-width characters.';
-    res.redirect('/');
-    return;
+    return res.redirect('/');
   };
 
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
@@ -62,11 +61,11 @@ app.post('/signIn', (req, res) => {
     .then(result => {
       if (result.rowCount == 0) {
         req.session.message = 'There was a problem with your login.';
-        res.redirect('/login');
+        return res.redirect('/login');
       } else {
         req.session.userId = req.body.userId;
         req.session.password = req.body.password;
-        res.redirect('/');
+        return res.redirect('/');
       };
     })
     .catch(err => console.error(err));  
@@ -76,9 +75,9 @@ app.post('/signIn', (req, res) => {
 // index 
 app.get('/', (req, res) => {
   if (!common.checkSignIn(req, res)) {
-    res.redirect('/login');
+    return res.redirect('/login');
   }
-  res.render('index.ejs', {
+  return res.render('index.ejs', {
     userId: req.session.userId
   });
 });
@@ -86,9 +85,9 @@ app.get('/', (req, res) => {
 // form 
 app.get('/form', (req, res) => {
   if (!common.checkSignIn(req, res)) {
-    res.redirect('/login');
+    return res.redirect('/login');
   }
-  res.render('form.ejs');
+  return res.render('form.ejs');
 });
 
 
