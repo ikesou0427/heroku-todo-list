@@ -13,6 +13,7 @@ const pg = require("pg");
 const config = require("config");
 console.log(config);
 console.log("NODE_ENV=%s", process.env.NODE_ENV);
+console.log('----------------');
 const pool = new pg.Pool(config.db.postgres);
 
 //session
