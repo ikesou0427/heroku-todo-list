@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 5000;
 //})
 //})
 
-
+// index page
 app.get('/', (req, res) => {
   if (common.checkSesson(req,res)) {
     res.render('index.ejs', {
@@ -43,12 +43,14 @@ app.get('/', (req, res) => {
   }
 });
 
+// login page
 app.get('/login', (req, res) => {
   res.render('login.ejs', {
     id: 'google'
   });
 });
 
+// form page
 app.get('/form', (req, res) => {
   if (common.checkSesson(req, res)) {
     res.render('form.ejs', {
