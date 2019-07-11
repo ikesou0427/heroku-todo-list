@@ -50,6 +50,7 @@ app.post('/signIn', (req, res) => {
   // todo xss対策
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
   pool.connect((err, client, done) => {
+    console.log('ここまでは言ってます')
     client.query(sql, (err, result) => {
       done();
       err && console.error(err);
