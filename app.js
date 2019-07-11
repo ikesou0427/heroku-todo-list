@@ -52,7 +52,7 @@ app.post('/signIn', (req, res) => {
   // todo xss対策
   let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
   pool.connect((err, client, done) => {
-    client.query(sql, (err, result) => {
+    client.query(sql, app,(err, result) => {
       done();
       err && console.error(err);
       if (result.rowCount == 0) {
@@ -71,11 +71,10 @@ app.post('/signIn', (req, res) => {
 app.get('/', (req, res) => {
   if (!common.checkSignIn(req, res)) {
     res.redirect('/login');
-  } else {
-    res.render('index.ejs', {
-      userId: req.session.userId
-    });
   }
+  res.render('index.ejs', {
+    userId: req.session.userId
+  });
 });
 
 // form 
