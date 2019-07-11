@@ -14,6 +14,9 @@ const session_opt = {
 };
 app.use(session(session_opt));
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // publicフォルダ読み込み
 app.use(express.static('public'));
 //共通の処理
