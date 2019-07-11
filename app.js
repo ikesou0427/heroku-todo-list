@@ -30,6 +30,7 @@ const PORT = process.env.PORT || 5000;
 // index page
 app.get('/', (req, res) => {
   console.log(req.session.password, req.session.name);
+  console.log(common.checkSesson(req, res));
   if (common.checkSesson(req,res)) {
     res.render('index.ejs', {
       title: 'Test',
@@ -38,9 +39,7 @@ app.get('/', (req, res) => {
   } else {
     req.session.name = 'hoge';
     req.session.password = 1234;
-    res.render('login.ejs', {
-      id: 'google'
-    });
+    res.redirect('login.ejs');
   }
 });
 
