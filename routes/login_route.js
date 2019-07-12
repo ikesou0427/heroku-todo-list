@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 // sign-in
 router.post('/signIn', (req, res) => {
     //入力チェック
-    if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
+    if (!common.checkInputString(req.body.userId, 3, 10) || !common.checkInputString(req.body.password, 6, 16)) {
         req.session.message = 'Please type using half-width characters.';
         req.session.userId = '';
         req.session.password = '';
@@ -46,12 +46,34 @@ router.post('/signIn', (req, res) => {
 
 // sign-up
 router.get('/sign_up', (req, res) => {
-    return res.render('sign_up.ejs');
+    message = req.session.message;
+    req.session.message = '';
+    return res.render('sign_up.ejs', {
+        message: message
+    });
 });
 
 // sign-up do
 router.post('/sign_up/do', (req, res) => {
+    if (!common.checkInputString(req.body.userId, 3, 10) || !common.checkInputString(req.body.password,6,16)) {
+        req.session.message = 'Please type using half-width characters.';
+        req.session.userId = '';
+        req.session.password = '';
+        return res.redirect('/sign_up');
+    };
 
+    let sql = `INSERT INTO tb_users (user_id ,password) VALUES (\'${req.body.userId}\' , \'${req.body.password}\');`;
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                if (result.rowCount > 0) {
+                    req.session.userId = req.body.userId;
+                    req.session.password = req.body.password;
+                    return res.redirect('/');
+                };
+            })
+            .catch(err => console.error(err));
+    });
 });
 
 module.exports = router;
