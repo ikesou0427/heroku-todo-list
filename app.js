@@ -40,7 +40,7 @@ const PORT = process.env.PORT || 5000;
 
 // index
 const indexRouter = require('./routes/index_route');
-app.use('/', indexRouter);
+app.use('/hoge', indexRouter);
 
 // login 
 app.get('/login', (req, res) => {
