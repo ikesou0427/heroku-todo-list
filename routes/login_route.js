@@ -58,6 +58,7 @@ router.get('/sign_up', (req, res) => {
 });
 
 // sign-up do
+// todo ajaxでuseridが使われているか確認する処理を追加
 router.post('/sign_up/do', (req, res) => {
     if (!common.checkInputString(req.body.newUserId, 3, 10) || !common.checkInputString(req.body.newPassword,6,16)) {
         req.session.message = 'Please type using half-width characters.';
