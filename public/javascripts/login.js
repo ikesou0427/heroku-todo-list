@@ -1,0 +1,5 @@
+data: {
+    styleObject: {
+        color: 'red'
+    }
+}

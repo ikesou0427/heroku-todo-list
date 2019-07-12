@@ -8,7 +8,7 @@
 
     <body>
     <section>
-    <h1 v-bind:style="{color: red}">ログインしてください</h1>
+    <h1 v-bind:style="styleObject">ログインしてください</h1>
     <p><%=message%></p>
     <form action="/login/signIn" method="post">
         <input type="text" name="userId" class="name" placeholder="UserID" minlength="3" maxlength="10" required>
