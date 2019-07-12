@@ -6,12 +6,12 @@
         <script type="text/javascript" src="/javascripts/login.js"></script>
     </head>
 
-    <body style="background: #00ff00;">
+    <body>
     <section>
-    <h1 style="color: red">ログインしてください</h1>
+    <h1 v-bind:style="color: red">ログインしてください</h1>
     <p><%=message%></p>
     <form action="/login/signIn" method="post">
-        <input type="text" name="userId" class="name" placeholder="UserID" minlength="3" maxlength="10" required v-bind:value="hoge">
+        <input type="text" name="userId" class="name" placeholder="UserID" minlength="3" maxlength="10" required>
         <input type="password" name="password" class="email" placeholder="Password"  minlength="6" maxlength="16" required>
         <button type="submit">Log In</button>
     </form>
