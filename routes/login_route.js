@@ -20,14 +20,10 @@ router.post('/signIn', (req, res) => {
     //入力チェック
     if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
         req.session.message = 'Please type using half-width characters.';
-        console.log('#############################');
-        console.log(req.body.userId, req.body.password);
-        return res.redirect('/');
- 
-
+        req.session.userId = '';
+        req.session.password = '';
+        return res.redirect('/login');
     };
-    console.log('----------------------------------')
-    console.log(req.body.userId, req.body.password);
 
     let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
     pool.connect((err, client, done) => {
