@@ -18,6 +18,15 @@
     <a href="login/sign_up"><span>アカウント作成</span></a>
     </section>
     <section>
+    <div id="app">
+  <ol>
+    <li v-for="todo in todos">
+      <p v-if="todo.seen">
+        {{ todo.text }}
+      </p>
+    </li>
+  </ol>
+</div>
     </section>
     </body>
 </html>
