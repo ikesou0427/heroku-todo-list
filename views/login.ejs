@@ -11,7 +11,7 @@
     <h1>ログインしてください</h1>
     <p><%=message%></p>
     <form action="/login/signIn" method="post">
-        <input type="text" name="userId" class="name" placeholder="UserID" minlength="3" maxlength="10" required v-bind:valus="hoge">
+        <input type="text" name="userId" class="name" placeholder="UserID" minlength="3" maxlength="10" required v-bind:value="hoge">
         <input type="password" name="password" class="email" placeholder="Password"  minlength="6" maxlength="16" required>
         <button type="submit">Log In</button>
     </form>
