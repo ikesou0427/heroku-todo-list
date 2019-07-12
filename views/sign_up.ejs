@@ -9,8 +9,8 @@
     <section>
     <h1>必要情報を入力してください</h1>
     <form action="/login/sign_up/do" method="post">
-        <input type="text" name="userId" class="name" placeholder="UserID" maxlength="10" minlength="3" required>
-        <input type="password" name="password" class="email" placeholder="Password" maxlength="16" required>
+        <input type="text" name="userId" class="name" placeholder="UserID" minlength="3" maxlength="10" required>
+        <input type="password" name="password" class="email" placeholder="Password" minlength="6" maxlength="16" required>
         <button type="submit" class="btn">Sign Up</button>
     </form>
     </section>
