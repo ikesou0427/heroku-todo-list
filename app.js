@@ -35,34 +35,11 @@ const PORT = process.env.PORT || 5000;
 
 const indexRouter = require('./routes/index_route');
 const loginRouter = require('./routes/login_route');
+const formRouter = require('./routes/form_route');
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-
-// sign-up
-app.get('/sign_up', (req, res) => {
-  return res.render('sign_up.ejs', );
-});
-
-
-// index 
-// app.get('/', (req, res) => {
-//   if (!common.checkSignIn(req, res)) {
-//     return res.redirect('/login');
-//   }
-//   return res.render('index.ejs', {
-//     userId: req.session.userId
-//   });
-// });
-
-// form 
-app.get('/form', (req, res) => {
-  if (!common.checkSignIn(req, res)) {
-    return res.redirect('/login');
-  }
-  return res.render('form.ejs');
-});
-
+app.use('/form', formRouter);
 
 
 

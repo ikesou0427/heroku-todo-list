@@ -8,6 +8,7 @@ const pg = require("pg");
 const config = require("config");
 const pool = new pg.Pool(config.db.postgres);
 
+// login page
 router.get('/', (req, res) => {
     message = req.session.message;
     req.session.message = '';
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// sign-in
 router.post('/signIn', (req, res) => {
     //入力チェック
     if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
@@ -40,6 +42,11 @@ router.post('/signIn', (req, res) => {
             })
             .catch(err => console.error(err));
     });
+});
+
+// sign-up
+router.get('/sign_up', (req, res) => {
+    return res.render('sign_up.ejs');
 });
 
 module.exports = router;
