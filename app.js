@@ -72,6 +72,12 @@ app.post('/signIn', (req, res) => {
   });
 });
 
+// sign-up
+app.get('/sign_up', (req, res) => {
+  return res.render('sign_up.ejs', );
+});
+
+
 // index 
 app.get('/', (req, res) => {
   if (!common.checkSignIn(req, res)) {
