@@ -63,7 +63,7 @@ router.post('/sign_up/do', (req, res) => {
         req.session.message = 'Please type using half-width characters.';
         req.session.userId = '';
         req.session.password = '';
-        return res.redirect('/sign_up');
+        return res.redirect('/login/sign_up');
     };
 
     let sql = `INSERT INTO tb_users (user_id ,password) VALUES (\'${req.body.userId}\' , \'${req.body.password}\');`;
