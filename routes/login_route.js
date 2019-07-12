@@ -20,7 +20,11 @@ router.post('/signIn', (req, res) => {
     //入力チェック
     if (!common.isHalfWidthCharacters(req.body.userId) || !common.isHalfWidthCharacters(req.body.password)) {
         req.session.message = 'Please type using half-width characters.';
+        console.log('#############################');
+        console.log(req.body.userId, req.body.password);
         return res.redirect('/');
+ 
+
     };
     console.log('----------------------------------')
     console.log(req.body.userId, req.body.password);
