@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 //共通の処理
-const common = require("./common.js");
+const common = require("./common");
 
 const PORT = process.env.PORT || 5000;
 

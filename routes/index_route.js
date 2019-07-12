@@ -4,7 +4,7 @@ const router = express.Router();
 const app = express();
 // publicフォルダ読み込み
 app.use(express.static('public'));
-const common = require('./common.js');
+const common = require('../common');
 
 
 router.get('/', (req, res) => {
