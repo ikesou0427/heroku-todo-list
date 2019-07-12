@@ -6,9 +6,9 @@
         <script type="text/javascript" src="/javascripts/login.js"></script>
     </head>
 
-    <body>
+    <body style="background: #00ff00;">
     <section>
-    <h1 style="color: 'red'">ログインしてください</h1>
+    <h1 style="color: red">ログインしてください</h1>
     <p><%=message%></p>
     <form action="/login/signIn" method="post">
         <input type="text" name="userId" class="name" placeholder="UserID" minlength="3" maxlength="10" required v-bind:value="hoge">
