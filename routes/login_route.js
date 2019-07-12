@@ -59,7 +59,7 @@ router.get('/sign_up', (req, res) => {
 
 // sign-up do
 router.post('/sign_up/do', (req, res) => {
-    if (!common.checkInputString(req.body.userId, 3, 10) || !common.checkInputString(req.body.password,6,16)) {
+    if (!common.checkInputString(req.body.newUserId, 3, 10) || !common.checkInputString(req.body.newPassword,6,16)) {
         req.session.message = 'Please type using half-width characters.';
         req.session.userId = '';
         req.session.password = '';
