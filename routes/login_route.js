@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const common = require("./common");
+const common = require("../common");
 // DB
 const pg = require("pg");
 const config = require("config");
