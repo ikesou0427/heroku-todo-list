@@ -8,6 +8,8 @@ const app = express();
 const ejs = require('ejs');
 app.engine('ejs', ejs.renderFile);
 
+const vue = require('vue');
+
 //session
 const session = require('express-session');
 const session_opt = {
