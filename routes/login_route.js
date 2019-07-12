@@ -49,4 +49,10 @@ router.get('/sign_up', (req, res) => {
     return res.render('sign_up.ejs');
 });
 
+// sign-up do
+router.get('/sign_up/do', (req, res) => {
+    console.log('hogehogehgohgeo');
+    return res.redirect('/');
+});
+
 module.exports = router;
