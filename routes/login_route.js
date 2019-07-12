@@ -52,7 +52,6 @@ router.get('/sign_up', (req, res) => {
 // sign-up do
 router.get('/sign_up/do', (req, res) => {
     console.log('hogehogehgohgeo');
-    return res.redirect('/');
 });
 
 module.exports = router;
