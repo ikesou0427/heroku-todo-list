@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const common = require("../common");
+
 // DB
 const pg = require("pg");
 const config = require("config");
@@ -21,6 +22,7 @@ router.post('/signIn', (req, res) => {
         req.session.message = 'Please type using half-width characters.';
         return res.redirect('/');
     };
+    console.log(req.body.userId, req.body.password);
 
     let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
     pool.connect((err, client, done) => {

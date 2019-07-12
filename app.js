@@ -8,11 +8,6 @@ const app = express();
 const ejs = require('ejs');
 app.engine('ejs', ejs.renderFile);
 
-// // DB
-// const pg = require("pg");
-// const config = require("config");
-// const pool = new pg.Pool(config.db.postgres);
-
 //session
 const session = require('express-session');
 const session_opt = {
