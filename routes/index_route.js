@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const app = express();
 // publicフォルダ読み込み
-app.use(express.static('public'));
 const common = require('../common');
 
 
@@ -14,9 +12,6 @@ router.get('/', (req, res) => {
     return res.render('index.ejs', {
         userId: req.session.userId
     });
-});
-router.get('/huga', (req, res) => {
-    res.send('hogehgoe');
 });
 
 module.exports = router;

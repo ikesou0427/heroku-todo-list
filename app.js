@@ -38,18 +38,11 @@ const PORT = process.env.PORT || 5000;
 //# routing 
 //###########
 
-// index
 const indexRouter = require('./routes/index_route');
-app.use('/hoge', indexRouter);
+const loginRouter = require('./routes/login_route');
 
-// login 
-app.get('/login', (req, res) => {
-  message = req.session.message;
-  req.session.message = '';
-  return res.render('login.ejs', {
-    message: message
-  });
-});
+app.use('/', indexRouter);
+app.use('/login', loginRouter);
 
 // sign-in
 app.post('/signIn', (req, res) => {
