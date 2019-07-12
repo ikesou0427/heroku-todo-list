@@ -15,5 +15,8 @@ router.get('/', (req, res) => {
         userId: req.session.userId
     });
 });
+router.get('/huga', (req, res) => {
+    res.send('hogehgoe');
+});
 
 module.exports = router;
