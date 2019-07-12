@@ -66,13 +66,13 @@ router.post('/sign_up/do', (req, res) => {
         return res.redirect('/login/sign_up');
     };
 
-    let sql = `INSERT INTO tb_users (user_id ,password) VALUES (\'${req.body.userId}\' , \'${req.body.password}\');`;
+    let sql = `INSERT INTO tb_users (user_id ,password) VALUES (\'${req.body.newUserId}\' , \'${req.body.newPassword}\');`;
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
                 if (result.rowCount > 0) {
-                    req.session.userId = req.body.userId;
-                    req.session.password = req.body.password;
+                    req.session.userId = req.body.newUserId;
+                    req.session.password = req.body.newPassword;
                     return res.redirect('/');
                 };
             })
