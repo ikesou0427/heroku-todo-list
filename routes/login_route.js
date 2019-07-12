@@ -51,7 +51,7 @@ router.get('/sign_up', (req, res) => {
 
 // sign-up do
 router.post('/sign_up/do', (req, res) => {
-    console.log('hogehogehgohgeo');
+
 });
 
 module.exports = router;
