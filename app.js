@@ -38,6 +38,10 @@ const PORT = process.env.PORT || 5000;
 //# routing 
 //###########
 
+// index
+const indexRouter = require('./routes/index_route');
+app.use('/', indexRouter);
+
 // login 
 app.get('/login', (req, res) => {
   message = req.session.message;
@@ -79,14 +83,14 @@ app.get('/sign_up', (req, res) => {
 
 
 // index 
-app.get('/', (req, res) => {
-  if (!common.checkSignIn(req, res)) {
-    return res.redirect('/login');
-  }
-  return res.render('index.ejs', {
-    userId: req.session.userId
-  });
-});
+// app.get('/', (req, res) => {
+//   if (!common.checkSignIn(req, res)) {
+//     return res.redirect('/login');
+//   }
+//   return res.render('index.ejs', {
+//     userId: req.session.userId
+//   });
+// });
 
 // form 
 app.get('/form', (req, res) => {
