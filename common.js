@@ -14,6 +14,6 @@ exports.checkLength = (str,minLength,maxLength) => {
 
 exports.checkInputString = (str, minLength, maxLength) => {
     let checkStr = String(str);
-    console.log(his.isHalfWidthCharacters(checkStr) && this.checkLength(checkStr, minLength, maxLength) ? true : '');
+    console.log(this.isHalfWidthCharacters(checkStr) && this.checkLength(checkStr, minLength, maxLength) ? true : '');
     return this.isHalfWidthCharacters(checkStr) && this.checkLength(checkStr, minLength, maxLength) ? true : '';
 }
