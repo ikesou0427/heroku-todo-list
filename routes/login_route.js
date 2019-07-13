@@ -77,7 +77,11 @@ router.post('/sign_up/do', (req, res) => {
                     return res.redirect('/');
                 };
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.error(err);
+                req.session.message = 'The userID is already in use.';
+                return res.redirect('/login/sign_up');
+            });
     });
 });
 
