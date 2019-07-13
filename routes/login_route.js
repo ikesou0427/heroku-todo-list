@@ -44,7 +44,11 @@ router.post('/signIn', (req, res) => {
                     return res.redirect('/');
                 };
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.error(err);
+                req.session.message = 'There was a problem with your login.';
+                return res.redirect('/login');
+            });
     });
 });
 
