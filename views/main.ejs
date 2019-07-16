@@ -9,21 +9,21 @@
     <h1>TODOリスト</h1>
     <section>
     <h3 class="must">やらなければならないこと</h3>
-    <% for(let key in m){ %>
+    <% for(let key of m){ %>
         <p><%= m[key]%></p>
     <% } %>
     </section>
 
     <section>
     <h3 class="want">やること</h3>
-    <% for(let key in w){ %>
+    <% for(let key of w){ %>
         <p><%= w[key]%></p>
     <% } %>
     </section>
 
     <section>
     <h3 class="eventually">そのうちすること</h3>
-    <% for(let key in e){ %>
+    <% for(let key of e){ %>
         <p><%= e[key]%></p>
     <% } %>
     </section>
