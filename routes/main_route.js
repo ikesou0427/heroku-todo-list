@@ -22,6 +22,18 @@ router.get('/', (req, res) => {
         FROM tb_todo
         WHERE status != 0
         AND user_id = ${req.session.userId};`
+    
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                console.log(result);
+            })
+            .catch(err => {
+                console.error(err);
+                req.session.message = 'There was a problem with your login.';
+                return res.redirect('/login');
+            });
+    });
     return res.render('main.ejs', {
     });
 });

@@ -1,11 +1,7 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
 
 const common = require("../common");
-
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({ extended: false }));
 
 // DB
 const pg = require("pg");
