@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
     SELECT contents,attribute 
         FROM tb_todo
         WHERE status != 0
-        AND user_id = ${req.session.userId};`
+        AND user_id = \'${req.session.userId}\';`
     
     pool.connect((err, client, done) => {
         client.query(sql)
