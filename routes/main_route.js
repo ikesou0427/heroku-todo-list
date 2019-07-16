@@ -33,8 +33,9 @@ router.get('/', (req, res) => {
                         ? m.push(result.rows[i].contents)
                         : (result.rows[i].attribute == 'w'
                             ? w.push(result.rows[i].contents)
-                            : e.push(result.rows.contents));
+                            : e.push(result.rows[i].contents));
                 }
+                console.log(m,w,e)
                 return res.render('main.ejs', {
                     m: m,
                     w: w,
