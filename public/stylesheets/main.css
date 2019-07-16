@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+#wrap{
+    width: 960px;
+}
 .must{
     width: 200px;
     margin: 0 10px;
