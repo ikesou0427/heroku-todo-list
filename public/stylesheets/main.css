@@ -6,8 +6,9 @@
 }
 .must{
     width: 280px;
-    margin: 0 10px 0 30px;
+    margin: 0 20px;
     float: left;
+    text-align: center;
 }
 .want{
     width: 280px;
@@ -17,6 +18,7 @@
 }
 .eventually{
     width: 280px;
-    margin: 0 30px 0 10px;
+    margin: 0 20px;
     float: right;
+    text-align: center;
 }
