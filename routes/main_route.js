@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
-                console.log(result.rows);
+                console.log(result.rows[0]);
                 return res.render('main.ejs', {
                     data: result.rows
                 });
