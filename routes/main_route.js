@@ -26,7 +26,6 @@ router.get('/', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
-                console.log(result.rows);
                 let m = [], w = [], e = [];
                 for (let i = 0; i < result.rowCount; i++){
                     result.rows[i].attribute == 'm'
@@ -35,7 +34,6 @@ router.get('/', (req, res) => {
                             ? w.push(result.rows[i].contents)
                             : e.push(result.rows[i].contents));
                 }
-                console.log(m,w,e)
                 return res.render('main.ejs', {
                     m: m,
                     w: w,
