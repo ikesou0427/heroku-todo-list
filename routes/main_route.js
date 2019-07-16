@@ -36,6 +36,7 @@ router.get('/', (req, res) => {
                 return res.redirect('/login');
             });
     });
+    console.log(data);
     return res.render('main.ejs', {
         data: data
     });
