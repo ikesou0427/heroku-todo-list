@@ -23,10 +23,12 @@ router.get('/', (req, res) => {
         WHERE status != 0
         AND user_id = \'${req.session.userId}\';`
     
+    let data = [];
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
                 console.log(result.rows);
+                data = result.rows;
             })
             .catch(err => {
                 console.error(err);
@@ -35,6 +37,7 @@ router.get('/', (req, res) => {
             });
     });
     return res.render('main.ejs', {
+        data: data
     });
 });
 
