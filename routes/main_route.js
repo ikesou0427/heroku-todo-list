@@ -23,22 +23,19 @@ router.get('/', (req, res) => {
         WHERE status != 0
         AND user_id = \'${req.session.userId}\';`
     
-    let data = [];
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
                 console.log(result.rows);
-                data = result.rows;
+                return res.render('main.ejs', {
+                    data: result.rows
+                });
             })
             .catch(err => {
                 console.error(err);
                 req.session.message = 'There was a problem with your login.';
                 return res.redirect('/login');
             });
-    });
-    console.log(data);
-    return res.render('main.ejs', {
-        data: data
     });
 });
 
