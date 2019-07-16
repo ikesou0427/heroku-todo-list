@@ -27,8 +27,18 @@ router.get('/', (req, res) => {
         client.query(sql)
             .then(result => {
                 console.log(result.rows[0]);
+                let m = [], w = [], e = [];
+                for (let i = 0; i < result.rowCount; i++){
+                    result.rows[i].attribute = 'm'
+                        ? m.push(result.rows[i].contents)
+                        : (result.rows[i].attribute = 'w'
+                            ? w.push(result.rows[i].contents)
+                            : e.push(result.rows.contents));
+                }
                 return res.render('main.ejs', {
-                    data: result.rows
+                    m: m,
+                    w: w,
+                    e: e
                 });
             })
             .catch(err => {
