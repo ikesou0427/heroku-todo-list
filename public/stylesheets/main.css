@@ -4,6 +4,9 @@
     width: 960px;
     margin: 0 auto;
 }
+.list{
+    text-align: left;
+}
 .must{
     width: 280px;
     margin: 0 20px;
