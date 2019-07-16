@@ -9,22 +9,22 @@
     <h1>TODOリスト</h1>
     <section>
     <h3 class="must">やらなければならないこと</h3>
-    <% for(let i = 0;i < m.length ;i++){ %>
-        <p><%= m[i]%></p>
+    <% for(let key in m){ %>
+        <p><%= m[key]%></p>
     <% } %>
     </section>
 
     <section>
     <h3 class="want">やること</h3>
-    <% for(let i = 0;i < w.length ;i++){ %>
-        <p><%= w[i]%></p>
+    <% for(let key in w){ %>
+        <p><%= w[key]%></p>
     <% } %>
     </section>
 
     <section>
     <h3 class="eventually">そのうちすること</h3>
-    <% for(let i = 0;i < e.length ;i++){ %>
-        <p><%= e[i]%></p>
+    <% for(let key in e){ %>
+        <p><%= e[key]%></p>
     <% } %>
     </section>
     </article>
