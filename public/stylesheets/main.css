@@ -1,10 +1,10 @@
 @charset "utf-8";
 
-#wrap{
+#wrap {
     width: 960px;
     margin: 0 auto;
 }
-.list{
+.list {
     text-align: left;
 }
 /* .must{
@@ -25,6 +25,10 @@
     float: right;
     text-align: center;
 } */
-.list-content{
+.list-content {
     display: inline;
+}
+.list-content:after {
+    content: "\A" ;
+    white-space: pre-wrap ;
 }
