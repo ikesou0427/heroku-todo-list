@@ -12,9 +12,9 @@ const pool = new pg.Pool(config.db.postgres);
 
 // main page
 router.get('/', (req, res) => {
-    if (!common.checkSignIn(req, res)) {
-        return res.redirect('/login');
-    }
+    // if (!common.checkSignIn(req, res)) {
+    //     return res.redirect('/login');
+    // }
 
     // todo:userid check
     let sql = `
