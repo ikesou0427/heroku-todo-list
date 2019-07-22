@@ -53,7 +53,6 @@ router.post('/new', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
-    console.log('hoge');
 
     // 入力チェック
     let sql = `
