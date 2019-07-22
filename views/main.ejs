@@ -9,6 +9,16 @@
     <div id="wrap">
         <article>
         <h1>TODOリスト</h1>
+        <form　action="/main/new" method="post">
+            <input type="text">
+            <select name="type">
+                <option value="m">しないといけないこと</option>
+                <option value="w">やりたいこと</option>
+                <option value="e">そのうちすること</option>
+            </select>
+            <input type="submit" value="送信">
+        </form>
+
         <section>
         <div class="must">
             <h3>しないといけないこと</h3>
@@ -41,6 +51,7 @@
             </div>
         </div>
         </section>
+
         </article>
     </div>
     </body>

@@ -7,24 +7,6 @@
 .list {
     text-align: left;
 }
-/* .must{
-    width: 280px;
-    margin: 0 20px;
-    float: left;
-    text-align: center;
-}
-.want{
-    width: 280px;
-    margin: 0 10px;
-    float: left;
-    text-align: center;
-}
-.eventually{
-    width: 280px;
-    margin: 0 20px;
-    float: right;
-    text-align: center;
-} */
 .list-checkbox:checked {
     display: none;
 }
