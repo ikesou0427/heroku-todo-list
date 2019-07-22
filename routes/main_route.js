@@ -56,7 +56,7 @@ router.post('/new', (req, res) => {
 
     // 入力チェック
     let sql = `
-    ISNERT INTO todo (user_id,contents,attribute)
+    INSERT INTO todo (user_id,contents,attribute)
         VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
     `
     pool.connect((err, client, done) => {
