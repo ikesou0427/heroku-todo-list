@@ -25,6 +25,9 @@
     float: right;
     text-align: center;
 } */
+.list-checkbox:checked {
+    display: none;
+}
 .list-content {
     display: inline;
 }
