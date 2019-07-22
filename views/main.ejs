@@ -10,13 +10,12 @@
         <article>
         <h1>TODOリスト</h1>
         <form　action="/main/new" method="post">
-            <input type="text">
+            <input type="text" name="content" placeholder="日本語と英数字のみ対応">
             <select name="type">
-                <option value="m" selected>しないといけないこと</option>
-                <option value="w">やりたいこと</option>
-                <option value="e">そのうちすること</option>
+                <option name="attribute" value="m" selected>しないといけないこと</option>
+                <option name="attribute" value="w">やりたいこと</option>
+                <option name="attribute" value="e">そのうちすること</option>
             </select>
-            <input type="hidden" value="">
             <button type="submit">送信</button>
         </form>
 

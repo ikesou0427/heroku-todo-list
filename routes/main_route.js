@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     // todo:userid check
     let sql = `
     SELECT contents,attribute 
-        FROM tb_todo
+        FROM todo
         WHERE status != 0
         AND user_id = \'${req.session.userId}\';`
     
@@ -39,6 +39,29 @@ router.get('/', (req, res) => {
                     w: w,
                     e: e
                 });
+            })
+            .catch(err => {
+                console.error(err);
+                req.session.message = 'There was a problem with your login.';
+                return res.redirect('/login');
+            });
+    });
+});
+
+// register new content
+router.get('/new', (req, res) => {
+    if (!common.checkSignIn(req, res)) {
+        return res.redirect('/login');
+    }
+
+    let sql = `
+    ISNERT INTO todo (user_id,contents,attribute)
+        VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
+    `
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                return res.redirect('/main');
             })
             .catch(err => {
                 console.error(err);
