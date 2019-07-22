@@ -49,11 +49,12 @@ router.get('/', (req, res) => {
 });
 
 // register new content
-router.get('/new', (req, res) => {
+router.post('/new', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
 
+    // 入力チェック
     let sql = `
     ISNERT INTO todo (user_id,contents,attribute)
         VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
