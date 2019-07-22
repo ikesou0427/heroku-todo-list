@@ -28,6 +28,9 @@
 .list-checkbox:checked {
     display: none;
 }
+.list-checkbox:checked + .list-content{
+    display: none;
+}
 .list-content {
     display: inline;
 }
