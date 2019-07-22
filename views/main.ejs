@@ -14,7 +14,7 @@
             <h3>しないといけないこと</h3>
             <div class="list">
             <% for(let item of m){ %>
-                <input class="must-content" type="checkbox"><div draggable="true"><%= item %></div>
+                <input type="checkbox"><div class="list-content" draggable="true"><%= item %></div>
             <% } %>
             </div>
         </div>
@@ -25,7 +25,7 @@
             <h3>やりたいこと</h3>
             <div class="list">
             <% for(let item of w){ %>
-                <input class="want-content" type="checkbox"><div draggable="true"><%= item %></div>
+                <input type="checkbox"><div class="list-content" draggable="true"><%= item %></div>
             <% } %>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <h3>そのうちすること</h3>
             <div class="list">
             <% for(let item of e){ %>
-                <input class="eventually-content" type="checkbox"><div class="hoge" draggable="true"><%= item %></div>
+                <input type="checkbox"><div class="list-content" draggable="true"><%= item %></div>
             <% } %>
             </div>
         </div>
