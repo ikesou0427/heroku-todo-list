@@ -29,6 +29,10 @@
     display: inline-block;
 }
 
-.wventually{
+.eventually{
+    display: inline;
+}
+
+.hoge{
     display: inline;
 }
