@@ -54,6 +54,7 @@ router.post('/new', (req, res) => {
         return res.redirect('/login');
     }
 
+    console.log(req.session.userId, req.body.content, req.body.attribute)
     // 入力チェック
     let sql = `
     INSERT INTO todo (user_id,contents,attribute)
