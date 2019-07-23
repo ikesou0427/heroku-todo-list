@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
                     m: m,
                     w: w,
                     e: e,
-                    jquery: $
+                    $: $
                 });
             })
             .catch(err => {
