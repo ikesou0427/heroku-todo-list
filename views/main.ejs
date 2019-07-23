@@ -70,9 +70,9 @@
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
-                    console.log('stop');
                     moveVal = $(this).val();
                     movecontent = $(this).text();
+                    console.log('stop');
                 }
             });
             $('.list').droppable({
@@ -82,8 +82,10 @@
                 },
                 accept: '.list-content',
                 drop: function(e, ui) {
+                    setTimeout(function(){
                     console.log('drop')
                     // $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true"> ${movecontent} </p>`)
+                    },500);
                 }
             });
 
