@@ -65,7 +65,8 @@
         $(function() {
             $('.list-content').draggable({
                 containment: "#main",
-                revert: "invalid"
+                revert: "invalid",
+                revertDuration: 100
             });
             $('.list').droppable({
                 over: function(e,ui) {
