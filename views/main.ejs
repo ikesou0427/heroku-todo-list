@@ -57,9 +57,9 @@
         </article>
     </div>
     </body>
+    <% hoge = m; %>
     <script>
-    let m = <% m%>
-    console.log(m)
+    console.log(hoge)
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
             $('.list-checkbox').on('click',function(){
