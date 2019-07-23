@@ -21,6 +21,7 @@
             <button type="submit">送信</button>
         </form>
         
+        <div id="main">
         <section>
         <div class="must">
             <h3>しないといけないこと</h3>
@@ -53,7 +54,7 @@
             </div>
         </div>
         </section>
-
+        </div>
         </article>
     </div>
     </body>
@@ -63,14 +64,20 @@
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
             $('.list-content').draggable({
-                containment: ".list"
+                containment: "#main"
             });
             $('.list').droppable({
                 over: function(e,ui) {
                     $(this)
                     .css('background', '#e0ffff')
                 },
-                accept: '.list'
+                accept: '.list-content',
+                drop: function(e, ui) {
+                    // listに追加する
+                },
+                stop: function(event,ui){
+                    // 範囲外だった時に元の位置に戻す
+                }
             });
 
             $('.list-checkbox').on('click',function(){
