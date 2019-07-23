@@ -61,12 +61,11 @@
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
             $('.list-checkbox').on('click',function(){
-                $(this).css({'display':'none'});
-                    $(this).next('p').css({'display':'none'});
+                let thisEl = $(this);
                 setTimeout(function(){
                     console.log('hoge');
-                    $(this).css({'display':'none'});
-                    $(this).next('p').css({'display':'none'});
+                    thisEl.css({'display':'none'});
+                    thisEl.next('p').css({'display':'none'});
                 },700);
             });
         });
