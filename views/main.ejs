@@ -63,11 +63,11 @@
             $(document).click(function(event){
                 setTimeout(function(){
                     var target = $(event.target);
-                    console.log(target.class);
-                    if(target.class("input")){
-                        target.css({'display':'none'});
-                        $(target + '.list-content').css({'display':'none'});
-                    };
+                    console.log(target.className);
+                    // if(target.class){
+                    //     target.css({'display':'none'});
+                    //     $(target + '.list-content').css({'display':'none'});
+                    // };
                 },1000);
             })
             // $('.list-checkbox').click(function(){
