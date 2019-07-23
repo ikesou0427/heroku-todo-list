@@ -4,15 +4,6 @@
         <title>TODOリスト</title>
         <%-include('./header')%>
         <script type="text/javascript" src="/javascripts/main.js"></script>
-        <script>
-        // jqueryが外部ファイルで読み込まれないため仕方なし
-        $(function() {
-        $('.list-checkbox').click(function(){
-            setTimeout(function(){
-            alert('hgoe');
-        },1000);
-        });
-        });</script>
         <link rel="stylesheet" href="/stylesheets/main.css">
     </head>
     <body>
@@ -66,4 +57,15 @@
         </article>
     </div>
     </body>
+    <script>
+        // jqueryが外部ファイルで読み込まれないため仕方なし
+        $(function() {
+            $('.list-checkbox').click(function(){
+                setTimeout(function(){
+                    $('.list-checkbox').css('display':'none');
+                    $('.list-checkbox + .list-content').css('display':'none');
+                },1000);
+            });
+        });
+    </script>
 </html>
