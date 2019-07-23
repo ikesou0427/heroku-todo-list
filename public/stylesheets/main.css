@@ -14,10 +14,12 @@ section {
 .list {
     text-align: left;
 }
-.list-checkbox:checked {
-    display: none;
+.list-checkbox {
+    transition-property: opacity; 
+    transition-duration: 1s;
+    opacity: 1;
 }
-.list-checkbox:checked + .list-content{
+.list-checkbox:checked {
     opacity: 0;
 }
 .list-content {
@@ -25,6 +27,9 @@ section {
     transition-property: opacity; 
     transition-duration: 1s;
     opacity: 1;
+}
+.list-checkbox:checked + .list-content{
+    opacity: 0;
 }
 .list-content:after {
     content: "\A" ;
