@@ -77,7 +77,7 @@
                 },
                 accept: '.list-content',
                 drop: function(e, ui) {
-                    $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true"> ${movecontent} </p>`)
+                    // $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true"> ${movecontent} </p>`)
                 },
                 stop: function(event,ui){
                     moveVal = $(this).attr("value");
