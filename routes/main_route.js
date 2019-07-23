@@ -87,7 +87,7 @@ router.post('/end', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
-    var n = req.query.id;
+    var n = req.body.id;
     console.log(n);
     return;
 
