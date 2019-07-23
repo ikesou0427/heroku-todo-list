@@ -84,8 +84,9 @@
                 drop: function(e, ui) {
                     let self = $(this);
                     setTimeout(function(){
-                        self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}> ${movecontent}</p>`);
-                    },1000);
+                        console.log(moveVal)
+                        self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
+                    },500);
                 }
             });
 
