@@ -83,7 +83,8 @@
                 drop: function(e, ui) {
                     setTimeout(function(){
                         console.log($(this).parents().find('.list'));
-                        $(this).parents().find('.list').append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`);
+                        // $(this).parents().find('.list').append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`);
+                        $('.list').append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`);
                     },500);
                 }
             });
