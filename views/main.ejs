@@ -70,9 +70,9 @@
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
-                    moveVal = $(this).attr("value");
+                    moveVal = $(this).val();
                     movecontent = $(this).text();
-                    console.log($(this).attr("value"),$(this).text(),'hoge');
+                    console.log($(this).val(),$(this).text());
                 }
             });
             $('.list').droppable({
