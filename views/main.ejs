@@ -25,9 +25,8 @@
         <div class="must">
             <h3>しないといけないこと</h3>
             <div class="list">
-            <% console.log(m) %>
-            <% for(let item of m){ %>
-                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item[0] %></p>
+            <% for(let i = 0;i < m.length;i++){ %>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= m[0][i] %></p>
             <% } %>
             </div>
         </div>
@@ -37,8 +36,8 @@
         <div class="want">
             <h3>やりたいこと</h3>
             <div class="list">
-            <% for(let item of w){ %>
-                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item[0] %></p>
+            <% for(let i = 0;i < w.length;i++){ %>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= w[0][i] %></p>
             <% } %>
             </div>
         </div>
@@ -48,8 +47,8 @@
         <div class="eventually">
             <h3>そのうちすること</h3>
             <div class="list">
-            <% for(let item of e){ %>
-                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item[0] %></p>
+            <% for(let i = 0;i < e.length;i++){ %>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= e[0][i] %></p>
             <% } %>
             </div>
         </div>

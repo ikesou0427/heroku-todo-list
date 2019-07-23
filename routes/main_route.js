@@ -40,7 +40,6 @@ router.get('/', (req, res) => {
                         e[1].push(result.rows[i].id);
                     }
                 }
-                console.log(m, w, e);
                 return res.render('main.ejs', {
                     message: message,
                     m: m,
