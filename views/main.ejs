@@ -19,47 +19,39 @@
             </select>
             <button type="submit">送信</button>
         </form>
-
-        <ul>
-        <li>
-            <section>
-            <div class="must">
-                <h3>しないといけないこと</h3>
-                <div class="list">
-                <% for(let item of m){ %>
-                    <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
-                <% } %>
-                </div>
+        
+        <section>
+        <div class="must">
+            <h3>しないといけないこと</h3>
+            <div class="list">
+            <% for(let item of m){ %>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
+            <% } %>
             </div>
-            </section>
-        </li>
+        </div>
+        </section>
 
-        <li>
-            <section>
-            <div class="want">
-                <h3>やりたいこと</h3>
-                <div class="list">
-                <% for(let item of w){ %>
-                    <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
-                <% } %>
-                </div>
+        <section>
+        <div class="want">
+            <h3>やりたいこと</h3>
+            <div class="list">
+            <% for(let item of w){ %>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
+            <% } %>
             </div>
-            </section>
-        </li>
+        </div>
+        </section>
 
-        <li>
-            <section>
-            <div class="eventually">
-                <h3>そのうちすること</h3>
-                <div class="list">
-                <% for(let item of e){ %>
-                    <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
-                <% } %>
-                </div>
+        <section>
+        <div class="eventually">
+            <h3>そのうちすること</h3>
+            <div class="list">
+            <% for(let item of e){ %>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
+            <% } %>
             </div>
-            </section>
-        </li>
-        </ul>
+        </div>
+        </section>
 
         </article>
     </div>

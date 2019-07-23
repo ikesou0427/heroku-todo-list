@@ -4,12 +4,9 @@
     width: 960px;
     margin: 0 auto;
 }
-li {    
+section {
     display: inline-block;
 }
-/* section {
-    display: inline;
-} */
 .list {
     text-align: left;
 }
