@@ -63,8 +63,10 @@
             $(document).click(function(event){
                 setTimeout(function(){
                     var target = $(event.target);
+                    console.log(target.nodeName);
                     if(target.nodeName("input")){
                         target.css({'display':'none'});
+                        $(target + '.list-content').css({'display':'none'});
                     });
                 },1000);
             })
