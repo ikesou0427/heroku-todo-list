@@ -15,7 +15,7 @@ section {
     text-align: left;
 }
 .list-checkbox:checked {
-    /* display: none; */
+    display: none;
 }
 .list-checkbox:checked + .list-content{
     opacity: 0;
