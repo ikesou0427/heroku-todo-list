@@ -68,13 +68,13 @@
                     console.log();
                     thisEl.css({'display':'none'});
                     thisEl.next('p').css({'display':'none'});
-                    $.ajax({
-                        url:'/main/end',
-                        type:'POST',
-                        data:{
-                            'userid': <%=  %>
-                            'passward':$('#passward').val()
-                    }
+                    // $.ajax({
+                    //     url:'/main/end',
+                    //     type:'POST',
+                    //     data:{
+                    //         'userid': <%=  %>
+                    //         'passward':$('#passward').val()
+                    // }
  
                 },1000);
             });
