@@ -70,7 +70,7 @@
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
-                    console.log($(this).val());
+                    console.log($(this).attr('valus'));
                     moveVal = $(this).val();
                     movecontent = $(this).text();
                 }
@@ -84,7 +84,6 @@
                 drop: function(e, ui) {
                     let self = $(this);
                     setTimeout(function(){
-                        console.log(moveVal)
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
                     },500);
                 }
