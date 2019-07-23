@@ -28,7 +28,6 @@ router.get('/', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
-                console.log(result);
                 let m = [], w = [], e = [];
                 for (let i = 0; i < result.rowCount; i++){
                     result.rows[i].attribute == 'm'

@@ -15,13 +15,16 @@ section {
     text-align: left;
 }
 .list-checkbox:checked {
-    display: none;
+    /* display: none; */
 }
 .list-checkbox:checked + .list-content{
-    display: none;
+    opacity: 1;
 }
 .list-content {
     display: inline;
+    transition-property: opacity; 
+    transition-duration: 1s;
+    opacity: 0;
 }
 .list-content:after {
     content: "\A" ;
