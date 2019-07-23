@@ -88,16 +88,17 @@
                 }
             });
 
-            $('.list-checkbox').on('click',function(){
-                let thisEl = $(this);
+            $(document).on('click','.list-checkbox',function(){
+            // $('.list-checkbox').on('click',function(){
+                let self = $(this);
                 setTimeout(function(){
-                    thisEl.css({'display':'none'});
-                    thisEl.next('p').css({'display':'none'});
+                    self.css({'display':'none'});
+                    self.next('p').css({'display':'none'});
                     $.ajax({
                         url:'/main/end',
                         type:'POST',
                         data:{
-                            'id': thisEl.attr("value")
+                            'id': self.attr("value")
                         }
                     })
                     .done(data => {
