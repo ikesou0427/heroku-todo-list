@@ -6,6 +6,10 @@
 }
 section {
     display: inline-block;
+    vertical-align:  top; 
+    padding:  10px;     
+    margin-bottom: 10px; 
+    width: 5%;
 }
 .list {
     text-align: left;
