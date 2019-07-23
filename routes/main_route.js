@@ -87,13 +87,9 @@ router.post('/end', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
-    var n = req.body.id;
-    console.log(n);
-    return;
 
     let sql = `
-    UPDATE todo SET status = 0 WHERE id = 
-        VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
+    UPDATE todo SET status = 0 WHERE id = \'${req.body.id}\';
     `
     pool.connect((err, client, done) => {
         client.query(sql)
