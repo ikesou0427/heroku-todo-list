@@ -87,7 +87,6 @@ router.post('/end', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
-    console.log(req.body.id);
 
     let sql = `
     UPDATE todo SET status = 0 WHERE id = \'${req.body.id}\';
