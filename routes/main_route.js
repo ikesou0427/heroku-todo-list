@@ -15,6 +15,8 @@ router.get('/', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
+    message = req.session.message;
+    req.session.message = '';
 
     // todo:userid check
     let sql = `
@@ -35,7 +37,7 @@ router.get('/', (req, res) => {
                             : e.push(result.rows[i].contents));
                 }
                 return res.render('main.ejs', {
-                    message: req.session.message,
+                    message: message,
                     m: m,
                     w: w,
                     e: e
@@ -54,8 +56,11 @@ router.post('/new', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
+    if (!main.checkJaAndEn(req.body.content)) {
+        req.session.message = '日本語と半角英数のみを使用してください';
+        return res.redirect('/main');
+    }
 
-    // 入力チェック
     let sql = `
     INSERT INTO todo (user_id,contents,attribute)
         VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
