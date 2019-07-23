@@ -83,7 +83,7 @@
                 drop: function(e, ui) {
                     setTimeout(function(){
                         // $(this).parents().find('.list').append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`);
-                        ($(this).parent().find('.list')).append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`);
+                        ($(this).parent()).append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`);
                     },500);
                 }
             });
