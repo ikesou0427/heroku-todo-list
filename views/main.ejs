@@ -69,7 +69,7 @@
                         url:'/main/end',
                         type:'POST',
                         data:{
-                            'userid': <%= userId %>,
+                            'userid': "\'" + <%= userId %> + "\'",
                             'id': thisEl.attr("value"),
                         }
                     })
