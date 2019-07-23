@@ -60,12 +60,22 @@
     <script>
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
-            $('.list-checkbox').click(function(){
+            $(document).click(function(event){
                 setTimeout(function(){
-                    $('.list-checkbox').css({'display':'none'});
-                    $('.list-checkbox + .list-content').css({'display':'none'});
+                    var target = $(event.target);
+                    if(target.is("input")){
+                        target.css({'display':'none'});
+                    });
                 },1000);
-            });
+            })
+            // $('.list-checkbox').click(function(){
+                
+            //     setTimeout(function(){
+            //         $('.list-checkbox').css({'display':'none'});
+            //         $('.list-checkbox + .list-content').css({'display':'none'});
+                    
+            //     },1000);
+            // });
         });
     </script>
 </html>
