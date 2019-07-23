@@ -58,19 +58,22 @@
     </div>
     </body>
     <script>
+        let m = <%= m%>;
+        let w = <%= w%>;
+        let e = <%= e%>;
+        console.log(m,w,e);
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
             $('.list-checkbox').on('click',function(){
                 let thisEl = $(this);
                 setTimeout(function(){
-                    console.log();
                     thisEl.css({'display':'none'});
                     thisEl.next('p').css({'display':'none'});
                     // $.ajax({
                     //     url:'/main/end',
                     //     type:'POST',
                     //     data:{
-                    //         'userid':$('#userid').val(),
+                    //         'userid': <%=  %>
                     //         'passward':$('#passward').val()
                     // }
  
