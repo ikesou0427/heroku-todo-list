@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
     // todo:userid check
     let sql = `
-    SELECT contents,attribute 
+    SELECT id,contents,attribute 
         FROM todo
         WHERE status != 0
         AND user_id = \'${req.session.userId}\';`
@@ -27,13 +27,18 @@ router.get('/', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
-                let m = [], w = [], e = [];
+                let m = [[], []], w = [[], []], e = [[], []];
                 for (let i = 0; i < result.rowCount; i++){
-                    result.rows[i].attribute == 'm'
-                        ? m.push(result.rows[i].contents)
-                        : (result.rows[i].attribute == 'w'
-                            ? w.push(result.rows[i].contents)
-                            : e.push(result.rows[i].contents));
+                    if (result.rows[i].attribute == 'm') {
+                        m[0].push(result.rows[i].contents);
+                        m[1].push(result.rows[i].id);
+                    } else if (result.rows[i].attribute == 'w') {
+                        w[0].push(result.rows[i].contents);
+                        w[1].push(result.rows[i].id);
+                    } else {
+                        e[0].push(result.rows[i].contents);
+                        e[1].push(result.rows[i].id);
+                    }
                 }
                 return res.render('main.ejs', {
                     message: message,

@@ -26,7 +26,7 @@
             <h3>しないといけないこと</h3>
             <div class="list">
             <% for(let item of m){ %>
-                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item[0] %></p>
             <% } %>
             </div>
         </div>
@@ -37,7 +37,7 @@
             <h3>やりたいこと</h3>
             <div class="list">
             <% for(let item of w){ %>
-                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item[0] %></p>
             <% } %>
             </div>
         </div>
@@ -48,7 +48,7 @@
             <h3>そのうちすること</h3>
             <div class="list">
             <% for(let item of e){ %>
-                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item %></p>
+                <input class="list-checkbox" type="checkbox"><p class="list-content" draggable="true"><%= item[0] %></p>
             <% } %>
             </div>
         </div>
@@ -63,9 +63,17 @@
             $('.list-checkbox').on('click',function(){
                 let thisEl = $(this);
                 setTimeout(function(){
-                    console.log('hoge');
+                    console.log();
                     thisEl.css({'display':'none'});
                     thisEl.next('p').css({'display':'none'});
+                    // $.ajax({
+                    //     url:'/main/end',
+                    //     type:'POST',
+                    //     data:{
+                    //         'userid':$('#userid').val(),
+                    //         'passward':$('#passward').val()
+                    // }
+ 
                 },1000);
             });
         });
