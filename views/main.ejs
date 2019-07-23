@@ -77,9 +77,6 @@
                 },
                 accept: '.list-content',
                 drop: function(e, ui) {
-                    // listに追加する + 見た目をよくする
-                    // 一番下にHTMLとして追加する 
-                    console.log($(this).attr("value"));
                     $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true"> ${movecontent} </p>`)
                 },
                 stop: function(event,ui){
