@@ -57,9 +57,19 @@
         </article>
     </div>
     </body>
+    <script type="text/javascript" src="/javascripts/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-ui.min.js"></script>
     <script>
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
+            $('.list').droppable({
+                over: function(e,ui) {
+                    $(this)
+                    .css('background', '#e0ffff')
+                    .css('border', '2px solid #00bfff')
+                }
+            });
+            
             $('.list-checkbox').on('click',function(){
                 let thisEl = $(this);
                 setTimeout(function(){
