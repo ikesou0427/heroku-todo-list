@@ -62,7 +62,7 @@
         $(function() {
             $(document).click(function(event){
                 setTimeout(function(){
-                    var target = $(event.target);
+                    var target = event.target;
                     console.log(target.className);
                     // if(target.class){
                     //     target.css({'display':'none'});
