@@ -63,9 +63,9 @@
             $(document).click(function(event){
                 setTimeout(function(){
                     var target = $(event.target);
-                    // if(target.is("input")){
+                    if(target.nodeName("input")){
                         target.css({'display':'none'});
-                    // });
+                    });
                 },1000);
             })
             // $('.list-checkbox').click(function(){
