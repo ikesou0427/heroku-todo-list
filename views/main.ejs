@@ -63,18 +63,27 @@
             $('.list-checkbox').on('click',function(){
                 let thisEl = $(this);
                 setTimeout(function(){
-                    console.log();
                     thisEl.css({'display':'none'});
                     thisEl.next('p').css({'display':'none'});
-                    console.log(thisEl.attr("value"));
-                    // $.ajax({
-                    //     url:'/main/end',
-                    //     type:'POST',
-                    //     data:{
-                    //         'userid': <%=  %>
-                    //         'passward':$('#passward').val()
-                    // }
- 
+                    $.ajax({
+                        url:'/main/end',
+                        type:'POST',
+                        data:{
+                            'userid': <%= userId %>,
+                            'id': thisEl.attr("value"),
+                        }
+                    })
+                    .done(data => {
+                        // $('.result').html(data);
+                        console.log(data);
+                    })
+                    .fail(data => {
+                        // $('.result').html(data);
+                        console.log(data);
+                    })
+                    .always(data => {
+                        
+                    });
                 },1000);
             });
         });

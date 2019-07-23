@@ -42,6 +42,7 @@ router.get('/', (req, res) => {
                 }
                 return res.render('main.ejs', {
                     message: message,
+                    userId: req.session.userId,
                     m: m,
                     w: w,
                     e: e
@@ -81,6 +82,30 @@ router.post('/new', (req, res) => {
             });
     });
 });
+
+// finished content
+router.post('/end', (req, res) => {
+    if (!common.checkSignIn(req, res)) {
+        return res.redirect('/login');
+    }
+    console.log('hoge##################################');
+
+    let sql = `
+    INSERT INTO todo (user_id,contents,attribute)
+        VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
+    `
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                return;
+            })
+            .catch(err => {
+                console.error(err);
+                return;
+            });
+    });
+});
+
 
 
 module.exports = router;
