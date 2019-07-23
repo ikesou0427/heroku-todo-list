@@ -58,33 +58,23 @@
     </div>
     </body>
     <script>
-    
-    let m = [],w = [],e = [];
-    for(let i = 0;i < <%= m[0].length%>;i++){
-        m.push([<%= m[0]%>][i]);
-    }
-    for(let i = 0;i < <%= w[0].length%>;i++){
-        w.push([<%= w[0]%>][i]);
-    }
-    for(let i = 0;i < <%= e[0].length%>;i++){
-        e.push([<%= e[0]%>][i]);
-    }
-
-        console.log(m,w,e);
+    let m = <% m%>
+    console.log(m)
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
             $('.list-checkbox').on('click',function(){
                 let thisEl = $(this);
                 setTimeout(function(){
+                    console.log();
                     thisEl.css({'display':'none'});
                     thisEl.next('p').css({'display':'none'});
-                    // $.ajax({
-                    //     url:'/main/end',
-                    //     type:'POST',
-                    //     data:{
-                    //         'userid': <%=  %>
-                    //         'passward':$('#passward').val()
-                    // }
+                    $.ajax({
+                        url:'/main/end',
+                        type:'POST',
+                        data:{
+                            'userid': <%=  %>
+                            'passward':$('#passward').val()
+                    }
  
                 },1000);
             });
