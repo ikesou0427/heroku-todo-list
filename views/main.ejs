@@ -61,6 +61,8 @@
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
             $('.list-checkbox').on('click',function(){
+                $(this).css({'display':'none'});
+                    $(this).next('p').css({'display':'none'});
                 setTimeout(function(){
                     console.log('hoge');
                     $(this).css({'display':'none'});
