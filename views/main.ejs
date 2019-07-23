@@ -68,7 +68,12 @@
             $('.list-content').draggable({
                 containment: "#main",
                 revert: true,
-                revertDuration: 1
+                revertDuration: 1,
+                stop: function(event,ui){
+                    moveVal = $(this).attr("value");
+                    movecontent = $(this).text();
+                    console.log($(this).attr("value"),$(this).text(),'hoge');
+                }
             });
             $('.list').droppable({
                 over: function(e,ui) {
@@ -78,11 +83,6 @@
                 accept: '.list-content',
                 drop: function(e, ui) {
                     // $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true"> ${movecontent} </p>`)
-                },
-                stop: function(event,ui){
-                    moveVal = $(this).attr("value");
-                    movecontent = $(this).text();
-                    console.log($(this).attr("value"),$(this).text(),'hoge');
                 }
             });
 
