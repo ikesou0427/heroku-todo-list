@@ -35,6 +35,7 @@ router.get('/', (req, res) => {
                             : e.push(result.rows[i].contents));
                 }
                 return res.render('main.ejs', {
+                    message: req.session.message,
                     m: m,
                     w: w,
                     e: e
@@ -54,7 +55,6 @@ router.post('/new', (req, res) => {
         return res.redirect('/login');
     }
 
-    console.log(req.session.userId, req.body.content, req.body.attribute)
     // 入力チェック
     let sql = `
     INSERT INTO todo (user_id,contents,attribute)
@@ -67,8 +67,8 @@ router.post('/new', (req, res) => {
             })
             .catch(err => {
                 console.error(err);
-                req.session.message = 'There was a problem with your login.';
-                return res.redirect('/login');
+                req.session.message = 'There was a problem.';
+                return res.redirect('/main');
             });
     });
 });
