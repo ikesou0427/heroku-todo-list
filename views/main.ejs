@@ -63,10 +63,12 @@
     <script>
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
+            let moveVal = '';
+            let movecontent = '';
             $('.list-content').draggable({
                 containment: "#main",
-                revert: "invalid",
-                revertDuration: 100
+                revert: true,
+                revertDuration: 1
             });
             $('.list').droppable({
                 over: function(e,ui) {
@@ -77,11 +79,13 @@
                 drop: function(e, ui) {
                     // listに追加する + 見た目をよくする
                     // 一番下にHTMLとして追加する 
-                    $(this)
-                    .css('background', 'red')
+                    console.log($(this).attr("value"));
+                    $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true"> ${movecontent} </p>`)
                 },
                 stop: function(event,ui){
-                    // 範囲外だった時に戻す
+                    moveVal = $(this).attr("value");
+                    movecontent = $(this).text();
+                    console.log($(this).attr("value"),$(this).text(););
                 }
             });
 
