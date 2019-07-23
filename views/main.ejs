@@ -91,7 +91,7 @@
             $(document).on('click','.list-checkbox',function(){
             // $('.list-checkbox').on('click',function(){
                 let self = $(this);
-                console.log(self.val());
+                console.log(self);
                 setTimeout(function(){
                     self.css({'display':'none'});
                     self.next('p').css({'display':'none'});
@@ -99,7 +99,7 @@
                         url:'/main/end',
                         type:'POST',
                         data:{
-                            'id': self.attr("value")
+                            'id': self.val()
                         }
                     })
                     .done(data => {
