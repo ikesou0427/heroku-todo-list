@@ -82,8 +82,8 @@
                 accept: '.list-content',
                 drop: function(e, ui) {
                     setTimeout(function(){
-                        console.log($(this).parent());
-                        $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`).appendTo($(this).parent());
+                        console.log($(this).parents().find('.list'));
+                        $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`).appendTo($(this).parents().find('.list'));
                     },500);
                 }
             });
