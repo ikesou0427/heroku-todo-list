@@ -3,10 +3,14 @@
     <head>
         <title>TODOリスト</title>
         <%-include('./header')%>
-        <%# <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> %>
-        
+        <script type="text/javascript" src="/javascripts/main.js"></script>
 
-        <script>var $ = <%- $%></script>
+        <script>
+        $(function() {
+        $('.list-checkbox').click(function(){
+            alert('hello world!');
+        });
+        });</script>
         <link rel="stylesheet" href="/stylesheets/main.css">
     </head>
     <body>
@@ -60,5 +64,4 @@
         </article>
     </div>
     </body>
-    <script type="text/javascript" src="/javascripts/main.js"></script>
 </html>

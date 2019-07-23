@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const common = require("../common");
-const $ = require('jquery');
 
 // DB
 const pg = require("pg");
@@ -40,8 +39,7 @@ router.get('/', (req, res) => {
                     message: message,
                     m: m,
                     w: w,
-                    e: e,
-                    $: $
+                    e: e
                 });
             })
             .catch(err => {
