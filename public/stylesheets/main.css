@@ -4,6 +4,9 @@
     width: 960px;
     margin: 0 auto;
 }
+li {    
+    display: inline;
+}
 .list {
     text-align: left;
 }
