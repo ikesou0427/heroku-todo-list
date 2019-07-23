@@ -95,12 +95,12 @@ router.post('/end', (req, res) => {
         client.query(sql)
             .then(result => {
                 console.log('ok');
-                return 'success';
+                return res.json('success');
             })
             .catch(err => {
                 console.log('no');
                 console.error(err);
-                return 'Failure';
+                return res.json('Failure');
             });
     });
 });
