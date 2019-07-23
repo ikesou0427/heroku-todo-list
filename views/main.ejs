@@ -64,7 +64,8 @@
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
             $('.list-content').draggable({
-                containment: "#main"
+                containment: "#main",
+                revert: true
             });
             $('.list').droppable({
                 over: function(e,ui) {
@@ -76,7 +77,7 @@
                     // listに追加する
                 },
                 stop: function(event,ui){
-                    // 範囲外だった時に元の位置に戻す
+                    // 範囲外だった時に戻す
                 }
             });
 
