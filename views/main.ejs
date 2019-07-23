@@ -65,7 +65,7 @@
         $(function() {
             $('.list-content').draggable({
                 containment: "#main",
-                revert: invalid
+                revert: "invalid"
             });
             $('.list').droppable({
                 over: function(e,ui) {
@@ -74,7 +74,7 @@
                 },
                 accept: '.list-content',
                 drop: function(e, ui) {
-                    // listに追加する
+                    // listに追加する + 見た目をよくする
                 },
                 stop: function(event,ui){
                     // 範囲外だった時に戻す
