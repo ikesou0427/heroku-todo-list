@@ -24,7 +24,6 @@ section {
 }
 .list-content {
     display: inline;
-    margin: -0.3px 0;
 }
 
 .list-content:after {

@@ -76,6 +76,9 @@
                 accept: '.list-content',
                 drop: function(e, ui) {
                     // listに追加する + 見た目をよくする
+                    // 一番下にHTMLとして追加する 
+                    $(this)
+                    .css('background', 'red')
                 },
                 stop: function(event,ui){
                     // 範囲外だった時に戻す
