@@ -60,13 +60,13 @@
     <script>
     let m = [],w = [],e = [];
     for(let i = 0;i < <%= m[0].length%>;i++){
-        m.push(<%= m[0][i]%>);
+        m.push([<%= m[0]%>][i]);
     }
     for(let i = 0;i < <%= w[0].length%>;i++){
-        w.push(<%= w[0][i]%>);
+        w.push([<%= w[0]%>][i]);
     }
     for(let i = 0;i < <%= e[0].length%>;i++){
-        e.push(<%= e[0][i]%>);
+        e.push([<%= e[0]%>][i]);
     }
 
         console.log(m,w,e);
