@@ -90,6 +90,7 @@ router.post('/end', (req, res) => {
     }
     console.log('hoge##################################');
 
+    return;
     let sql = `
     INSERT INTO todo (user_id,contents,attribute)
         VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
