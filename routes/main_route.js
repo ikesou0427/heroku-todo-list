@@ -56,7 +56,7 @@ router.post('/new', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
-    if (!main.checkJaAndEn(req.body.content)) {
+    if (!common.checkJaAndEn(req.body.content)) {
         req.session.message = '日本語と半角英数のみを使用してください';
         return res.redirect('/main');
     }
