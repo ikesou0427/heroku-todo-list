@@ -81,7 +81,7 @@
                 },
                 accept: '.list-content',
                 drop: function(e, ui) {
-                    let self = $this;
+                    let self = $(this);
                     setTimeout(function(){
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true" value=${moveVal}> ${movecontent}</p>`);
                     },500);
