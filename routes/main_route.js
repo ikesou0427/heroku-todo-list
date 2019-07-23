@@ -94,9 +94,11 @@ router.post('/end', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                console.log('ok');
                 return 'success';
             })
             .catch(err => {
+                console.log('no');
                 console.error(err);
                 return 'Failure';
             });
