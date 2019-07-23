@@ -63,8 +63,8 @@
             $(document).click(function(event){
                 setTimeout(function(){
                     var target = $(event.target);
-                    console.log(target.nodeName);
-                    if(target.nodeName("input")){
+                    console.log(target.class);
+                    if(target.class("input")){
                         target.css({'display':'none'});
                         $(target + '.list-content').css({'display':'none'});
                     };
