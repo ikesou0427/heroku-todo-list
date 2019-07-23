@@ -1,4 +1,4 @@
-let $ = require('jQuery');
+let $ = require('jquery');
 
 $(function () {
     $('.list-checkbox').click(function () {
