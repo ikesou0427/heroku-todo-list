@@ -58,9 +58,10 @@
     </div>
     </body>
     <script>
-        let m = <%= m%>;
-        let w = <%= w%>;
-        let e = <%= e%>;
+    let m = [],w = [],e = [];
+        m.push(<%= m%>);
+        w.push(<%= w%>);
+        e.push(<%= e%>);
         console.log(m,w,e);
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
