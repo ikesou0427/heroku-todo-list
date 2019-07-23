@@ -62,7 +62,9 @@
     <script>
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
-            $('.list-content').draggable();
+            $('.list-content').draggable({
+                containment: ".list"
+            });
             $('.list').droppable({
                 over: function(e,ui) {
                     $(this)
