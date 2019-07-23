@@ -72,8 +72,7 @@
                 stop: function(event,ui){
                     moveVal = $(this).val();
                     movecontent = $(this).text();
-                    console.log($(this).val(),$(this).text());
-                    console.log($(this).attr("value"));
+                    console.log('stop');
                 }
             });
             $('.list').droppable({
@@ -83,6 +82,7 @@
                 },
                 accept: '.list-content',
                 drop: function(e, ui) {
+                    console.log('drop')
                     // $(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" draggable="true"> ${movecontent} </p>`)
                 }
             });
