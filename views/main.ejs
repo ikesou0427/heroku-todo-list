@@ -70,9 +70,9 @@
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
+                    console.log('stop');
                     moveVal = $(this).val();
                     movecontent = $(this).text();
-                    console.log('stop');
                 }
             });
             $('.list').droppable({
