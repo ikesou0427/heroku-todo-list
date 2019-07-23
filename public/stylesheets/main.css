@@ -7,6 +7,9 @@
 li {    
     display: inline;
 }
+section {
+    display: inline;
+}
 .list {
     text-align: left;
 }
