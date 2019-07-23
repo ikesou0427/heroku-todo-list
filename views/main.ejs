@@ -62,12 +62,11 @@
         $(function() {
             $(document).click(function(event){
                 setTimeout(function(){
-                    var target = event.target;
-                    console.log(target.className);
-                    // if(target.class){
-                    //     target.css({'display':'none'});
-                    //     $(target + '.list-content').css({'display':'none'});
-                    // };
+                    var target = event.target
+                    if(target.className == 'list-checkbox'){
+                        target.css({'display':'none'});
+                        $(target + '.list-content').css({'display':'none'});
+                    };
                 },1000);
             })
             // $('.list-checkbox').click(function(){
