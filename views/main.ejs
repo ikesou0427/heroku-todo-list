@@ -62,6 +62,7 @@
     <script>
         // jqueryが外部ファイルで読み込まれないため仕方なし
         $(function() {
+            $('.list-content').draggable();
             $('.list').droppable({
                 over: function(e,ui) {
                     $(this)
@@ -69,7 +70,7 @@
                     .css('border', '2px solid #00bfff')
                 }
             });
-            
+
             $('.list-checkbox').on('click',function(){
                 let thisEl = $(this);
                 setTimeout(function(){
