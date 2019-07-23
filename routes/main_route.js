@@ -87,11 +87,12 @@ router.post('/end', (req, res) => {
     if (!common.checkSignIn(req, res)) {
         return res.redirect('/login');
     }
-    console.log('hoge##################################');
-
+    var n = req.query.id;
+    console.log(n);
     return;
+
     let sql = `
-    INSERT INTO todo (user_id,contents,attribute)
+    UPDATE todo SET status = 0 WHERE id = 
         VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
     `
     pool.connect((err, client, done) => {
