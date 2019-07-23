@@ -42,7 +42,6 @@ router.get('/', (req, res) => {
                 }
                 return res.render('main.ejs', {
                     message: message,
-                    userId: req.session.userId,
                     m: m,
                     w: w,
                     e: e
