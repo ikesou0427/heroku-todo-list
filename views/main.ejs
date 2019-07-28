@@ -70,10 +70,7 @@
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
-                    // ここに問題ある
-                    console.log($(this).innerHTML);
-                    console.log($(this)[0].attributes[1].value)
-                    moveVal = $(this).val();
+                    moveVal = $(this)[0].attributes[1].value;
                     movecontent = $(this).text();
                 }
             });
