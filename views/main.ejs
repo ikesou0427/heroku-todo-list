@@ -67,6 +67,7 @@
             let movecontent = '';
             $('.list-content').draggable({
                 containment: "#main",
+                helper: "original",
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
@@ -75,10 +76,6 @@
                 }
             });
             $('.list').droppable({
-                over: function(e,ui) {
-                    $(this)
-                    .css('background', '#e0ffff')
-                },
                 accept: '.list-content',
                 drop: function(e, ui) {
                     let self = $(this);
