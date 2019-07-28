@@ -67,6 +67,7 @@
             let movecontent = '';
             $('.list-content').draggable({
                 containment: "#main",
+                connectToSortable: ".list-content",
                 helper: "original",
                 revert: true,
                 revertDuration: 1,
