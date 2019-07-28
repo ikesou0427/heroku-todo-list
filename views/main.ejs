@@ -70,9 +70,11 @@
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
+                    // ここに問題ある
                     console.log($(this).attr('valus'));
                     moveVal = $(this).val();
                     movecontent = $(this).text();
+                    console.log('get',movecontent,moveVal);
                 }
             });
             $('.list').droppable({
@@ -83,7 +85,10 @@
                 accept: '.list-content',
                 drop: function(e, ui) {
                     let self = $(this);
+                    console.log(moveVal);
+                    console.log(movecontent);
                     setTimeout(function(){
+                        // value が設定されていない
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
                     },500);
                 }
