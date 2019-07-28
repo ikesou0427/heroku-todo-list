@@ -71,7 +71,8 @@
                 revertDuration: 1,
                 stop: function(event,ui){
                     // ここに問題ある
-                    console.log($(this).attr('valus'),$(this).val());
+                    console.log($(this).innerHTML);
+                    console.log($(this))
                     moveVal = $(this).val();
                     movecontent = $(this).text();
                 }
