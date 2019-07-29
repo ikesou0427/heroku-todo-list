@@ -66,19 +66,18 @@
             let moveVal = '';
             let movecontent = '';
             $('.list-content').draggable({
-                connectToSortable: ".list-content",
-                helper: "original",
+                containment: "#main",
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
                     moveVal = $(this)[0].attributes[1].value;
                     movecontent = $(this).text();
-                    console.log('hoge');
                 }
             });
             $('.list').droppable({
                 accept: '.list-content',
                 drop: function(e, ui) {
+                    console.log(ui)
                     let self = $(this);
                     setTimeout(function(){
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
