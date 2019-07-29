@@ -66,7 +66,9 @@
         $(function() {
             let moveVal = '';
             let movecontent = '';
-            $('.list-content').draggable({
+            
+            $(document).on('draggable','.list-content')({
+            // $('.list-content').draggable({
                 containment: "#main",
                 revert: true,
                 revertDuration: 1,
@@ -75,7 +77,9 @@
                     movecontent = $(this).text();
                 }
             });
-            $('.list').droppable({
+
+            $(document).on('droppable','.list')({
+            // $('.list').droppable({
                 accept: '.list-content',
                 drop: function(e, ui) {
                     $(ui.helper[0]).css({'display':'none'});
@@ -85,9 +89,6 @@
                     setTimeout(function(){
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
                     },200);
-
-                    console.log($(ui)[0].helper[0].attributes[1].value);
-                    console.log(attr);
 
                     $.ajax({
                         url:'/main/change',
@@ -104,7 +105,7 @@
                         console.log(data);
                     })
                     .always(data => { 
-                        
+
                     });
                 }
             });
