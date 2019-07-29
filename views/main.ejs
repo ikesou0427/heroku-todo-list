@@ -86,7 +86,7 @@
                     },100);
 
 
-                    console.log($(ui));
+                    console.log($(ui)[0].helper[0].attributes[1].value);
                     return;
                     $.ajax({
                         url:'/main/change',
