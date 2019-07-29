@@ -89,6 +89,7 @@ router.post('/change', (req, res) => {
     };
 
     let sql = `UPDATE todo SET attribute = \'${req.body.attr}\' WHERE id = \'${req.body.id}\';`
+    console.log(sql);
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
