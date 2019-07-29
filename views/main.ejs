@@ -67,8 +67,7 @@
             let moveVal = '';
             let movecontent = '';
             
-            $(document).on('draggable','.list-content',function(){
-            // $('.list-content').draggable({
+            $('.list-content').draggable({
                 containment: "#main",
                 revert: true,
                 revertDuration: 1,
@@ -78,8 +77,7 @@
                 }
             });
 
-            $(document).on('droppable','.list',function(){
-            // $('.list').droppable({
+            $('.list').droppable({
                 accept: '.list-content',
                 drop: function(e, ui) {
                     $(ui.helper[0]).css({'display':'none'});
