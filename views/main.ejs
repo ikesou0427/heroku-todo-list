@@ -77,8 +77,8 @@
             $('.list').droppable({
                 accept: '.list-content',
                 drop: function(e, ui) {
+                    console.log(ui);
                     $(ui).css({'display':'none'});
-                    console.log('hoge')
                     let self = $(this);
                     setTimeout(function(){
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
