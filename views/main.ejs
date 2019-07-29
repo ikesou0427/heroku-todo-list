@@ -73,6 +73,7 @@
                 stop: function(event,ui){
                     moveVal = $(this)[0].attributes[1].value;
                     movecontent = $(this).text();
+                    console.log('hoge');
                 }
             });
             $('.list').droppable({
@@ -84,7 +85,6 @@
                     },500);
                 }
             });
-            $('.list').sortable();
 
             $(document).on('click','.list-checkbox',function(){
             // $('.list-checkbox').on('click',function(){
