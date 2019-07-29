@@ -4,6 +4,12 @@
     width: 960px;
     margin: 0 auto;
 };
+@media screen and (max-width:600px){
+    #wrap: {
+        width: 100%;
+    };
+};
+
 section {
     width: 30%;
     display: inline-block;
