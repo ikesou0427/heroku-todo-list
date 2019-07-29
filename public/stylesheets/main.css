@@ -31,6 +31,11 @@ section {
     white-space: pre-wrap ;
 }
 @media screen and (max-width:480px) {
+    #main {
+        overflow:auto;
+        width: 90%;
+        height: 100%;
+    }
     #wrap {
         width: 100%;
     }
