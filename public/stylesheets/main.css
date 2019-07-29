@@ -11,10 +11,9 @@ section {
     padding: 10px;
     margin-bottom: 10px;
 };
-@media screen and (min-width:600px){
+@media screen and (max-width:600px){
     section: {
         width: 90%;
-        display: inline;
     };
 };
 .list {
