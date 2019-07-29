@@ -27,7 +27,7 @@
             <h3>しないといけないこと</h3>
             <div class="list">
             <% for(let i = 0;i < m[0].length;i++){ %>
-                <input class="list-checkbox m" type="checkbox" value=<%= m[1][i]%>><p class="list-content" value=<%= m[1][i]%>><%= m[0][i] %></p>
+                <input class="list-checkbox" type="checkbox" value=<%= m[1][i]%>><p class="list-content m" value=<%= m[1][i]%>><%= m[0][i] %></p>
             <% } %>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <h3>やりたいこと</h3>
             <div class="list">
             <% for(let i = 0;i < w[0].length;i++){ %>
-                <input class="list-checkbox w" type="checkbox" value=<%= w[1][i]%>><p class="list-content" value=<%= w[1][i]%>><%= w[0][i] %></p>
+                <input class="list-checkbox" type="checkbox" value=<%= w[1][i]%>><p class="list-content w" value=<%= w[1][i]%>><%= w[0][i] %></p>
             <% } %>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <h3>そのうちすること</h3>
             <div class="list">
             <% for(let i = 0;i < e[0].length;i++){ %>
-                <input class="list-checkbox e" type="checkbox" value=<%= e[1][i]%>><p class="list-content" value=<%= e[1][i]%>><%= e[0][i] %></p>
+                <input class="list-checkbox" type="checkbox" value=<%= e[1][i]%>><p class="list-content e" value=<%= e[1][i]%>><%= e[0][i] %></p>
             <% } %>
             </div>
         </div>
