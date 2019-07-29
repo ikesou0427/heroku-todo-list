@@ -86,13 +86,13 @@
                     },100);
 
 
-                    console.log($(ui)[0].helper[0].attributes[1].value);
+                    console.log($(ui).val());
                     return;
                     $.ajax({
                         url:'/main/change',
                         type:'POST',
                         data:{
-                            'id': self.val(),
+                            'id': $(ui)[0].helper[0].attributes[1].value,
                             'attr': attr
                         }
                     })
