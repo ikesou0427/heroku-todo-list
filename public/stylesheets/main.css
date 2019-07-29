@@ -7,9 +7,15 @@
 section {
     width: 30%;
     display: inline-block;
-    vertical-align:  top; 
-    padding:  10px;
+    vertical-align: top; 
+    padding: 10px;
     margin-bottom: 10px;
+}
+@media screen and (max-width:600px){
+    section: {
+        width: 90%;
+        display: none;
+    }
 }
 .list {
     text-align: left;
