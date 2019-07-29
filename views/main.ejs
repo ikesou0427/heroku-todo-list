@@ -67,7 +67,6 @@
             let movecontent = '';
             $('.list-content').draggable({
                 containment: "#main",
-                helper: "original",
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
@@ -78,14 +77,13 @@
             $('.list').droppable({
                 accept: '.list-content',
                 drop: function(e, ui) {
-                    console.log(ui)
+                    ui.css({'display':'none'});
                     let self = $(this);
                     setTimeout(function(){
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
                     },500);
                 }
             });
-            $('.list-content').sortable();
 
             $(document).on('click','.list-checkbox',function(){
             // $('.list-checkbox').on('click',function(){
