@@ -15,8 +15,12 @@ $(function () {
     $('.list').droppable({
         accept: '.list-content',
         drop: function (e, ui) {
-            $(ui.helper[0]).css({ 'display': 'none' });
-            $(ui.helper[0]).prev('input').css({ 'display': 'none' });
+            $(ui.helper[0]).css({
+                'display': 'none'
+            });
+            $(ui.helper[0]).prev('input').css({
+                'display': 'none'
+            });
             let self = $(this);
             let attr = self.children("p")[0].classList[1];
             setTimeout(function () {
@@ -46,8 +50,12 @@ $(function () {
     $(document).on('click', '.list-checkbox', function () {
         let self = $(this);
         setTimeout(function () {
-            self.css({ 'display': 'none' });
-            self.next('p').css({ 'display': 'none' });
+            self.css({
+                'display': 'none'
+            });
+            self.next('p').css({
+                'display': 'none'
+            });
             $.ajax({
                 url: '/main/end',
                 type: 'POST',
@@ -67,3 +75,4 @@ $(function () {
         }, 1000);
     });
 });
+
