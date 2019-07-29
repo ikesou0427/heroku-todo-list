@@ -4,7 +4,7 @@
     width: 960px;
     margin: 0 auto;
 };
-@media screen and (max-width:600px){
+@media screen and (max-width:480px){
     #wrap: {
         width: 100%;
     };
@@ -17,9 +17,9 @@ section {
     padding: 10px;
     margin-bottom: 10px;
 };
-@media screen and (max-width:600px){
+@media screen and (max-width:480px){
     section: {
-        width: 90%;
+        /*width: 90%;*/
     };
 };
 
