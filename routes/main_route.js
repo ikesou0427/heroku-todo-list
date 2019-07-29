@@ -88,10 +88,7 @@ router.post('/change', (req, res) => {
         return res.redirect('/login');
     };
 
-    let sql = `
-    UPDATE todo SET attribute = \'${req.body.attr}\' WHERE id = \'${req.body.id}\';
-    `
-    console.log(sql);
+    let sql = `UPDATE todo SET attribute = \'${req.body.attr}\' WHERE id = \'${req.body.id}\';`
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
