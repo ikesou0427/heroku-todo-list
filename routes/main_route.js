@@ -82,6 +82,27 @@ router.post('/new', (req, res) => {
     });
 });
 
+// change content
+router.post('/change', (req, res) => {
+    if (!common.checkSignIn(req, res)) {
+        return res.redirect('/login');
+    };
+
+    let sql = `
+    UPDATE todo SET attribute = \'${req.body.attr}\' WHERE id = \'${req.body.id}\';
+    `
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                return res.json('success');
+            })
+            .catch(err => {
+                console.error(err);
+                return res.json('Failure');
+            });
+    });
+});
+
 // finished content
 router.post('/end', (req, res) => {
     if (!common.checkSignIn(req, res)) {
