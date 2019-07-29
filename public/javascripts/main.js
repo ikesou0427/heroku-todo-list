@@ -6,6 +6,7 @@ $(function () {
         containment: "#main",
         revert: true,
         revertDuration: 1,
+        scroll: true,
         stop: function (event, ui) {
             moveVal = $(this)[0].attributes[1].value;
             movecontent = $(this).text();
