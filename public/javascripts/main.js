@@ -1,4 +1,3 @@
-// jqueryが外部ファイルで読み込まれないため仕方なし
 $(function () {
     let moveVal = '';
     let movecontent = '';
