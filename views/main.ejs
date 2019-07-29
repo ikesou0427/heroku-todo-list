@@ -77,7 +77,7 @@
             $('.list').droppable({
                 accept: '.list-content',
                 drop: function(e, ui) {
-                    console.log($(ui));
+                    console.log($(ui).hasClass());
                     $(ui.helper[0]).css({'display':'none'});
                     $(ui.helper[0]).prev('input').css({'display':'none'});
                     let self = $(this);
