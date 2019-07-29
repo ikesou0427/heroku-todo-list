@@ -67,6 +67,7 @@
             let movecontent = '';
             $('.list-content').draggable({
                 containment: "#main",
+                helper: "original",
                 revert: true,
                 revertDuration: 1,
                 stop: function(event,ui){
@@ -84,6 +85,7 @@
                     },500);
                 }
             });
+            $('.list-content').sortable();
 
             $(document).on('click','.list-checkbox',function(){
             // $('.list-checkbox').on('click',function(){
