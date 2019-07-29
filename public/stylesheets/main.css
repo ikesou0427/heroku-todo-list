@@ -14,7 +14,6 @@ section {
 @media screen and (max-width:600px){
     section: {
         width: 90%;
-        display: none;
     }
 }
 .list {
