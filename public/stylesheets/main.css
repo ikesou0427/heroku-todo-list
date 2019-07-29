@@ -33,7 +33,7 @@ section {
 @media screen and (max-width:480px) {
     #main {
         width: 90%;
-        height: 100vh;
+        height: 90vh;
         overflow: auto;
     }
     #wrap {
