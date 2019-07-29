@@ -81,7 +81,7 @@
                     $(ui.helper[0]).css({'display':'none'});
                     $(ui.helper[0]).prev('input').css({'display':'none'});
                     let self = $(this);
-                    console.log(self);
+                    console.log(self.child());
                     setTimeout(function(){
                         self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
                     },300);
