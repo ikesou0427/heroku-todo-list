@@ -22,20 +22,25 @@ section {
         width: 90%;
     };
 };
+
 .list {
     text-align: left;
 };
+
 .list-checkbox , .list-content {
     transition-property: opacity; 
     transition-duration: 1s;
     opacity: 1;
 };
+
 .list-checkbox:checked , .list-checkbox:checked + .list-content{
     opacity: 0;
 };
+
 .list-content {
     display: inline;
 };
+
 .list-content:after {
     content: "\A" ;
     white-space: pre-wrap ;
