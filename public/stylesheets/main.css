@@ -6,7 +6,7 @@
 };
 @media screen and (max-width:480px){
     #wrap {
-        width: 100%;
+        /* width: 100%; */
     };
 };
 
@@ -19,8 +19,8 @@ section {
 };
 @media screen and (max-width:480px){
     section {
-        width: 90%;
-        vertical-align: baseline;
+        /* width: 90%;
+        vertical-align: baseline; */
     };
 };
 
