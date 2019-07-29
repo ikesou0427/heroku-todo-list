@@ -30,3 +30,12 @@ section {
     content: "\A" ;
     white-space: pre-wrap ;
 }
+@media screen and (max-width:480px) {
+    #wrap {
+        width: 100%;
+    }
+    section {
+        display: inline;
+        vertical-align:  baseline; 
+    }
+}
