@@ -3,35 +3,35 @@
 #wrap {
     width: 960px;
     margin: 0 auto;
-}
+};
 section {
     width: 30%;
     display: inline-block;
     vertical-align: top; 
     padding: 10px;
     margin-bottom: 10px;
-}
+};
 @media screen and (min-width:600px){
     section: {
         width: 90%;
-    }
-}
+        display: inline;
+    };
+};
 .list {
     text-align: left;
-}
+};
 .list-checkbox , .list-content {
     transition-property: opacity; 
     transition-duration: 1s;
     opacity: 1;
-}
+};
 .list-checkbox:checked , .list-checkbox:checked + .list-content{
     opacity: 0;
-}
+};
 .list-content {
     display: inline;
-}
-
+};
 .list-content:after {
     content: "\A" ;
     white-space: pre-wrap ;
-}
+};
