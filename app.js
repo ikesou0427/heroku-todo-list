@@ -35,12 +35,10 @@ const PORT = process.env.PORT || 5000;
 
 const indexRouter = require('./routes/index_route');
 const loginRouter = require('./routes/login_route');
-// const formRouter = require('./routes/form_route');
 const mainRouter = require('./routes/main_route');
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
-// app.use('/form', formRouter);
 app.use('/main', mainRouter);
 
 
