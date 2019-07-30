@@ -5,8 +5,7 @@
     margin: 0 auto;
 }
 label::before{
-    /* content: "\A" ;
-    white-space: pre-wrap ; */
+    content: "\A" ;
 }
 section {
     width: 30%;
