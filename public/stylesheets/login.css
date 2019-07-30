@@ -5,6 +5,11 @@ body {
     margin: 160px auto 0 auto;
     background-color: #bcccd9;
 }
+@media screen and (max-width:480px) {
+    body {
+        width: 100%;
+    }
+}
 
 section {
     margin: 0 30%;
