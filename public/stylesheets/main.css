@@ -4,10 +4,6 @@
     width: 960px;
     margin: 0 auto;
 }
-label::before{
-    content: "\A" ;
-    white-space: pre-wrap ;
-}
 section {
     width: 30%;
     display: inline-block;
