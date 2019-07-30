@@ -12,9 +12,11 @@ section {
     margin-bottom: 10px;
 }
 h1 {
+    font-size: 3em;
     font-family: 'Bitter', serif;
 }
 h3 {
+    font-size: 2em;
     font-family: 'Bitter', serif;
 }
 .list {
