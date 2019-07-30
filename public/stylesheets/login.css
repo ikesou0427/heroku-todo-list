@@ -48,5 +48,6 @@ a {
 
 span {
     width: 240px;
+    margin: 0 auto;
     text-align: right;
 }
