@@ -49,8 +49,7 @@ button {
     margin: 0 auto;
 }
 a {
-    /* width: 240px; */
-    /* margin-left: 70%; */
+    margin:0;
     color: #bcccd9;
     font-family: 'Bitter', serif;
 }
