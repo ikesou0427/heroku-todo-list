@@ -96,12 +96,10 @@ li input[type="radio"] {
 
 
 #nav li input label{
-    /* width: 15%;
-    text-align: center;
-    display: inline-block;
-    border: 2px solid #bcccd9;
-    padding: 0.5em;
-    border-radius: 0.67em; */
+    color: #546474;
+    font-size: 0.7em;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 footer {
