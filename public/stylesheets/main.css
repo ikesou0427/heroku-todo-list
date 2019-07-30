@@ -93,7 +93,7 @@ footer {
         padding-right: 10px;
         border-left: 7px solid #9193a0;
     }
-    label:after {
+    label:after,#new:after {
         content: "\A" ;
         white-space: pre-wrap ;
     }
