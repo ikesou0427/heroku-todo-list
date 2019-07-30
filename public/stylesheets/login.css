@@ -12,6 +12,12 @@ section {
     border-radius: 0.67em;
 }
 
+h1 {
+    font-size: 2em;
+    font-family: 'Bitter', serif;
+    /* padding:  */
+}
+
 input {
     width: 240px;
     height: 30px;
