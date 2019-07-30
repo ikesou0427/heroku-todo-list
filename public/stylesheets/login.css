@@ -3,6 +3,7 @@
 body {
     width: 960px;
     margin: 160px auto 0 auto;
+    background-color: #546474;
 }
 
 section {
@@ -10,12 +11,14 @@ section {
 }
 
 input {
-    width: 160px;
-    height: 10px;
+    width: 240px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 0.67em;
     white-space: pre-line;
     word-break: break-all;
 }
 button {
-    width: 160px;
-    height: 10px;
+    width: 240px;
+    height: 30px;
 }
