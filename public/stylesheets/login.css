@@ -28,14 +28,15 @@ input {
     width: 240px;
     height: 30px;
     margin: 0.5em auto;
-    border-radius: 0.79em;
+    border-radius: 0.38em;
     white-space: pre-line;
     word-break: break-all;
 }
 button {
     width: 240px;
-    height: 30px;
+    height: 40px;
     color: #ffffff;
     background-color: #546474;
     margin: 0.5em auto;
+    border-radius: 0.38em;
 }
