@@ -8,13 +8,14 @@ body {
 
 section {
     margin: 0 30%;
+    background-color: #ffffff;
+    border-radius: 0.67em;
 }
 
 input {
     width: 240px;
     height: 30px;
-    background-color: #ffffff;
-    border-radius: 0.67em;
+    margin: 1em 0;
     white-space: pre-line;
     word-break: break-all;
 }
