@@ -30,6 +30,7 @@ h3 {
 }
 .list-content {
     display: inline;
+    font-family: 'Bitter', serif;
 }
 
 .list-content:after {
