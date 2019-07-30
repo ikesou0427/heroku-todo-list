@@ -22,6 +22,8 @@ $(function () {
             $(ui.helper[0]).prev('input').css({
                 'display': 'none'
             });
+            console.log($(this));
+            console.log($(ui)[0].helper[0].attributes[1].value)
             let self = $(this);
             let attr = self.children("p")[0].classList[1];
             setTimeout(function () {
