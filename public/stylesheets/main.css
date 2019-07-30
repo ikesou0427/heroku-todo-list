@@ -38,8 +38,6 @@ footer {
     background-color: #767671;
     width: 960px;
     margin: 150px auto 0;
-    text-align: left;
-    background-color: transparent;
 }
 @media screen and (max-width:480px) {
     body {
@@ -64,7 +62,7 @@ footer {
     footer {
         width: 100%;
         margin: 20px 0 0;
-        text-align: center;
+        text-align: left;
         background-color: transparent;
     }
 }
