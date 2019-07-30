@@ -42,11 +42,12 @@ button {
 }
 
 a {
+    width: 240px;
     color: #bcccd9;
-    /* margin: 0 auto; */
-        text-align: right;
+    margin: 0.5em auto;
+    /* text-align: right; */
 }
 
 span {
-    text-align: right;
+    /* text-align: right; */
 }
