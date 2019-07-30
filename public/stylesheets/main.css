@@ -4,6 +4,10 @@
     width: 960px;
     margin: 0 auto;
 }
+form input:after {
+    content: "\A" ;
+    white-space: pre-wrap ;
+}
 section {
     width: 30%;
     display: inline-block;
