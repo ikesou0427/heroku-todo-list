@@ -8,6 +8,7 @@ body {
 
 section {
     margin: 0 30%;
+    padding: 10px 0;
     background-color: #ffffff;
     border-radius: 0.67em;
 }
