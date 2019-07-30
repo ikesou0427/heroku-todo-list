@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <title>TODOリスト</title>
+        <title href="/main">TODOリスト</title>
         <%-include('./header')%>
         <link rel="stylesheet" href="/stylesheets/main.css">
     </head>
@@ -12,7 +12,7 @@
         <p><%=message%></p>
         <form action="/main/new" method="post">
             <input id="new" type="text" name="content" placeholder="日本語と英数字のみ対応" required>
-            <select name="attribute">
+            <select name="attribute" id="select">
                 <option value="m" selected>しないといけないこと</option>
                 <option value="w">やりたいこと</option>
                 <option value="e">そのうちすること</option>

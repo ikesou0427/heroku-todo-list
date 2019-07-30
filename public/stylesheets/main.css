@@ -37,6 +37,19 @@ section {
     border-radius: 0.67em;
 }
 
+#select {
+    border: 2px solid #C0C0C0;
+    padding: 0.5em;
+    border-radius: 0.67em;
+}
+button {
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #C0C0C0;
+}
+
 footer {
     width: 100%;
     text-align: center;
