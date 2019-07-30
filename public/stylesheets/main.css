@@ -80,6 +80,7 @@ footer {
         height: 80vh;
         overflow: auto;
         margin-left: 1em;
+        border: 1px solid #cccccc;
     }
 
     #wrap {
