@@ -56,17 +56,16 @@ button {
 }
 
 button:active {
-  /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+  transform: translateY(4px);
+  border-bottom: none;
 }
 
 footer {
     width: 100%;
     text-align: center;
     color: #ffffff;
-    background-color: #bcccd9;
+    background-color: #546474;
     padding: 20px 0;
     margin: 150px auto 0;
 }
