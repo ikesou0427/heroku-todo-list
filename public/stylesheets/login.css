@@ -55,11 +55,12 @@ button {
     border-radius: 0.38em;
 }
 
-#sign_up {
+#sign_up,#login {
     width: 240px;
     height: 20px;
     margin: 0 auto;
 }
+
 a {
     color: #bcccd9;
 }
