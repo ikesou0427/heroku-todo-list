@@ -8,7 +8,7 @@ body {
 @media screen and (max-width:480px) {
     body {
         width: 100%;
-        margin: 20% auto 0 auto;
+        margin-top: 25%;
     }
 }
 
