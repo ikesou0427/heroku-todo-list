@@ -38,7 +38,7 @@ section {
 }
 
 #select {
-    padding: 0.4em;
+    border: 1px solid;
 }
 button {
   display: inline-block;
@@ -85,7 +85,7 @@ footer {
     }
 
     button {
-        margin-top: 2em;
+        margin-top: 1em;
     }
 
     footer {
