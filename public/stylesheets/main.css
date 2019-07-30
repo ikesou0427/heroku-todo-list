@@ -31,6 +31,12 @@ section {
     white-space: pre-wrap ;
 }
 
+#new {
+    border: 2px solid #C0C0C0;
+    padding: 0.5em;
+    border-radius: 0.67em;
+}
+
 footer {
     width: 100%;
     text-align: center;
