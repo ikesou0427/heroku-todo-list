@@ -22,10 +22,6 @@ h3 {
 }
 
 #main {
-    width: 90%;
-    height: 80vh;
-    overflow: auto;
-    padding-left: 1em;
     border: 1px solid #546474;
 }
 
@@ -122,6 +118,12 @@ footer {
     }
     #wrap {
         width: 100%;
+    }
+    #main {
+        width: 90%;
+        height: 80vh;
+        overflow: auto;
+        padding-left: 1em;
     }
     section {
         display: inline;
