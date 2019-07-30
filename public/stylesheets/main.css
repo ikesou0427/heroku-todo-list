@@ -75,11 +75,11 @@ button:active {
 }
  
 #nav li {
+    width: 20%;
     display: inline-block;
 }
 
 #nav li label{
-    width: 20%;
     text-align: center;
     border: 2px solid #bcccd9;
     padding: 0.5em;
