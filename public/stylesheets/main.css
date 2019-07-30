@@ -72,37 +72,6 @@ button:active {
     border-bottom: none;
 }
 
-#nav {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0;
-}
- 
-#nav li {
-    display: inline-block;
-}
-
-#nav li label{
-    text-align: center;
-    border: solid #546474;
-    border-width: 1px 1px 0 1px;
-    border-radius: 0.67em 0.67em 0 0;
-    padding: 0.5em;
-    color: #546474;
-    font-size: 0.7em;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-li input[type="radio"] {
-    display:none; 
-}
-
-#nav li input[type="radio"]:checked + label{ 
-    color: #ffffff;
-    background-color: #546474;
-}
-
 footer {
     width: 100%;
     text-align: center;
@@ -144,6 +113,32 @@ footer {
     }
     button {
         margin-top: 1em;
+    }
+    #nav {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    #nav li {
+        display: inline-block;
+    }
+    #nav li label{
+        text-align: center;
+        border: solid #546474;
+        border-width: 1px 1px 0 1px;
+        border-radius: 0.67em 0.67em 0 0;
+        padding: 0.5em;
+        color: #546474;
+        font-size: 0.7em;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    li input[type="radio"] {
+        display:none; 
+    }
+    #nav li input[type="radio"]:checked + label{ 
+        color: #ffffff;
+        background-color: #546474;
     }
     footer {
         padding: 5px 0;
