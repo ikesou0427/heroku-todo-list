@@ -4,6 +4,9 @@
     width: 960px;
     margin: 0 auto;
 }
+#tab {
+    display: none;
+}
 section {
     width: 30%;
     display: inline-block;
@@ -19,11 +22,6 @@ h1 {
 h3 {
     font-size: 1.3em;
     font-family: 'Bitter', serif;
-}
-
-#main {
-    border: solid #546474;
-    border-width: 0 1px 0 1px;
 }
 
 .list {
@@ -120,7 +118,12 @@ footer {
     #wrap {
         width: 100%;
     }
+    #tab {
+        display: inline;
+    }
     #main {
+        border: solid #546474;
+        border-width: 0 1px 0 1px;
         width: 90%;
         height: 80vh;
         overflow: auto;
