@@ -92,11 +92,12 @@ footer {
     }
     #main {
         border: solid #546474;
-        border-width: 0 1px 0 1px;
-        width: 100%;
+        border-left: 1px;
+        width: 90%;
         height: 80vh;
         overflow: auto;
-        padding: 0 1em 0 1em;
+        padding-left: 1em;
+        margin-right: 1em;
     }
     section {
         display: inline;
