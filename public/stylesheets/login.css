@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 body {
+    background-color: aqua;
     width: 960px;
     margin: 0 auto;
 }
