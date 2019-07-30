@@ -32,25 +32,35 @@ section {
 }
 
 footer {
-    width: 100%;
-    margin: 20px 0 0;
-    text-align: center;
+    width: 960px;
+    margin: 150px auto 0;
+    text-align: left;
     background-color: transparent;
 }
 @media screen and (max-width:480px) {
     body {
         height: 100vh;
     }
+
     #main {
         width: 90%;
         height: 80vh;
         overflow: auto;
     }
+
     #wrap {
         width: 100%;
     }
+
     section {
         display: inline;
         vertical-align:  baseline; 
+    }
+
+    footer {
+        width: 100%;
+        margin: 20px 0 0;
+        text-align: center;
+        background-color: transparent;
     }
 }
