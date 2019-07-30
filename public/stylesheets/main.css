@@ -12,11 +12,11 @@ section {
     margin-bottom: 10px;
 }
 h1 {
-    font-size: 3em;
+    font-size: 2em;
     font-family: 'Bitter', serif;
 }
 h3 {
-    font-size: 2em;
+    font-size: 1.3em;
     font-family: 'Bitter', serif;
 }
 .list {
@@ -89,6 +89,11 @@ footer {
     section {
         display: inline;
         vertical-align:  baseline; 
+    }
+    h3:before {
+        content: "";
+        padding-right: 10px;
+        border-left: 7px solid #9cb4a4;
     }
 
     button {
