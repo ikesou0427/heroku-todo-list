@@ -74,16 +74,22 @@ button:active {
     margin-bottom: 0;
 }
  
-#nav li {
+/* #nav li {
     width: 15%;
     text-align: center;
     display: inline-block;
     border: 2px solid #bcccd9;
     padding: 0.5em;
     border-radius: 0.67em;
-}
+} */
 
 #nav li label{
+    width: 15%;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #bcccd9;
+    padding: 0.5em;
+    border-radius: 0.67em;
     color: #546474;
     font-size: 0.7em;
     text-decoration: none;
@@ -94,7 +100,7 @@ li input[type="radio"] {
     display:none; 
 }
 
-#nav li input[type="radio"]:checked + label { 
+#nav li input[type="radio"]:checked + label{ 
     color: #ffffff;
     background-color: #546474;
 }
