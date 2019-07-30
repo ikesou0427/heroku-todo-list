@@ -15,11 +15,12 @@ section {
 input {
     width: 240px;
     height: 30px;
-    margin: 1em 0;
+    margin: 0.7em auto;
     white-space: pre-line;
     word-break: break-all;
 }
 button {
     width: 240px;
     height: 30px;
+    margin: 0.7em auto;
 }
