@@ -8,7 +8,7 @@ body {
 
 section {
     margin: 0 30%;
-    padding: 10px 0;
+    padding: 7px 0 15px 0;
     background-color: #ffffff;
     border-radius: 0.67em;
 }
@@ -17,7 +17,6 @@ h1 {
     font-size: 1.4em;
     font-family: 'Bitter', serif;
     text-align: center;
-    /* padding:  */
 }
 
 form {
@@ -36,5 +35,7 @@ input {
 button {
     width: 240px;
     height: 30px;
+    color: #ffffff;
+    background-color: #546474;
     margin: 0.5em auto;
 }
