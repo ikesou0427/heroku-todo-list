@@ -1,10 +1,21 @@
 @charset "utf-8";
 
 body {
-    background-color: aqua;
     width: 960px;
-    margin: 0 auto;
+    margin: 160px auto 0 auto;
 }
+
 section {
     margin: 0 30%;
+}
+
+input {
+    width: 160px;
+    height: 10px;
+    white-space: pre-line;
+    word-break: break-all;
+}
+button {
+    width: 160px;
+    height: 10px;
 }
