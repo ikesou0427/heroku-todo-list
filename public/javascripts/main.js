@@ -82,5 +82,54 @@ $(function () {
                 });
         }, 1000);
     });
+
+
+    $(document).on('click', '#mast', function () {
+        $('.mast').css({
+            'display': 'inline'
+        });
+        $('.want').css({
+            'display': 'none'
+        });
+        $('.eventually').css({
+            'display': 'none'
+        });
+    });
+
+    $(document).on('click', '#want', function () {
+        $('.mast').css({
+            'display': 'none'
+        });
+        $('.want').css({
+            'display': 'inline'
+        });
+        $('.eventually').css({
+            'display': 'none'
+        });
+    });
+
+    $(document).on('click', '#eventually', function () {
+        $('.mast').css({
+            'display': 'none'
+        });
+        $('.want').css({
+            'display': 'none'
+        });
+        $('.eventually').css({
+            'display': 'inline'
+        });
+    });
+
+    $(document).on('click', '#all', function () {
+        $('.mast').css({
+            'display': 'inline'
+        });
+        $('.want').css({
+            'display': 'inline'
+        });
+        $('.eventually').css({
+            'display': 'inline'
+        });
+    });
 });
 
