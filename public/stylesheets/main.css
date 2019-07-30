@@ -32,7 +32,7 @@ section {
 }
 
 #new {
-    border: 2px solid #C0C0C0;
+    border: 2px solid #bcccd9;
     padding: 0.5em;
     border-radius: 0.67em;
 }
@@ -41,7 +41,7 @@ button {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #C0C0C0;
+  background: #bcccd9;
   border-bottom: solid 4px #9fa2a8;
   border-radius: 3px;
 }
@@ -57,7 +57,7 @@ footer {
     width: 100%;
     text-align: center;
     color: #ffffff;
-    background-color: #767671;
+    background-color: #bcccd9;
     padding: 20px 0;
     margin: 150px auto 0;
 }
