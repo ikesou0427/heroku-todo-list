@@ -91,7 +91,7 @@ button:active {
 }
 
 li input[type="radio"] {
-    /* display:none;  */
+    display:none; 
 }
 
 #nav li input[type="radio"]:checked + label { 
