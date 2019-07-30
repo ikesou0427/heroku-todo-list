@@ -40,3 +40,8 @@ button {
     margin: 0.5em auto;
     border-radius: 0.38em;
 }
+
+a {
+    text-align: right;
+    color: #bcccd9;
+}
