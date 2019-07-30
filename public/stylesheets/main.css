@@ -38,7 +38,6 @@ section {
 }
 
 #select {
-    border: 2px solid;
     padding: 0.4em;
 }
 button {
@@ -83,6 +82,10 @@ footer {
     section {
         display: inline;
         vertical-align:  baseline; 
+    }
+
+    button {
+        margin-top: 2em;
     }
 
     footer {
