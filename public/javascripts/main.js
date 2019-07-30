@@ -22,10 +22,12 @@ $(function () {
             $(ui.helper[0]).prev('input').css({
                 'display': 'none'
             });
-            console.log($(ui)); //移動まえ
-            console.log(self.children("p")[0].classList[1]); //移動後
+            
             let self = $(this);
             let attr = self.children("p")[0].classList[1];
+
+            console.log($(ui)[0].helper[0].classList[1]); //移動まえ
+            console.log(self.children("p")[0].classList[1]); //移動後
             setTimeout(function () {
                 self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
             }, 200);
