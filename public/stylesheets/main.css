@@ -47,6 +47,11 @@ h3 {
     border-radius: 0.67em;
 }
 
+#first:before {
+    content: "\A" ;
+    white-space: pre-wrap ;
+}
+
 button {
   display: inline-block;
   padding: 0.5em 1em;
@@ -96,9 +101,6 @@ footer {
     label:after{
         content: "\A" ;
         white-space: pre-wrap ;
-    }
-    #new:after {
-        content: "hoge"
     }
     button {
         margin-top: 1em;
