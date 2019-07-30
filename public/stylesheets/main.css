@@ -68,6 +68,23 @@ button:active {
   border-bottom: none;
 }
 
+#nav {
+  list-style: none;
+}
+ 
+#nav li {
+  width: 140px;
+  text-align: center;
+  background-color: #333;
+  display: inline-block;
+}
+ 
+#nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
 footer {
     width: 100%;
     text-align: center;
