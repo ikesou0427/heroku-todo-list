@@ -32,6 +32,10 @@ section {
 }
 
 footer {
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 0;
+    background-color: #767671;
     width: 960px;
     margin: 150px auto 0;
     text-align: left;
