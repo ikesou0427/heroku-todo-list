@@ -13,7 +13,7 @@ section {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.4em;
     font-family: 'Bitter', serif;
     text-align: center;
     /* padding:  */
@@ -27,7 +27,7 @@ form {
 input {
     width: 240px;
     height: 30px;
-    margin: 0.7em auto;
+    margin: 0.5em auto;
     border-radius: 0.79em;
     white-space: pre-line;
     word-break: break-all;
@@ -35,5 +35,5 @@ input {
 button {
     width: 240px;
     height: 30px;
-    margin: 0.7em auto;
+    margin: 0.5em auto;
 }
