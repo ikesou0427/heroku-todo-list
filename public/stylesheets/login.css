@@ -45,8 +45,7 @@ button {
 
 a {
     width: 240px;
-    margin: 0 auto;
+    margin-left: 70%;
     color: #bcccd9;
     font-family: 'Bitter', serif;
-    padding: 0 120px;
 }
