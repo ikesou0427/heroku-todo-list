@@ -30,6 +30,13 @@ section {
     content: "\A" ;
     white-space: pre-wrap ;
 }
+
+footer {
+    width: 100%;
+    margin: 20px 0 0;
+    text-align: center;
+    background-color: transparent;
+}
 @media screen and (max-width:480px) {
     body {
         height: 100vh;
