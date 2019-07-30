@@ -83,9 +83,8 @@ $(function () {
         }, 1000);
     });
 
-
-    $(document).on('click', '#mast', function () {
-        $('.mast').css({
+    $(document).on('click', '#must', function () {
+        $('.must').css({
             'display': 'inline'
         });
         $('.want').css({
@@ -97,7 +96,7 @@ $(function () {
     });
 
     $(document).on('click', '#want', function () {
-        $('.mast').css({
+        $('.must').css({
             'display': 'none'
         });
         $('.want').css({
@@ -109,7 +108,7 @@ $(function () {
     });
 
     $(document).on('click', '#eventually', function () {
-        $('.mast').css({
+        $('.must').css({
             'display': 'none'
         });
         $('.want').css({
@@ -121,7 +120,7 @@ $(function () {
     });
 
     $(document).on('click', '#all', function () {
-        $('.mast').css({
+        $('.must').css({
             'display': 'inline'
         });
         $('.want').css({
