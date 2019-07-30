@@ -19,14 +19,25 @@
         </form>
 
         
+        <%# <div>
+            <ul id="nav">
+                <li id="all"><a href="#all">全て</a></li>
+                <li id="must"><a href="#must">しないと</a></li>
+                <li id="want"><a href="#want">やりたい</a></li>
+                <li id="eventually"><a href="#eventually">そのうち</a></li>
+            </ul>
+        </div> %>
+
         <div>
             <ul id="nav">
-            <li><a href="#">全て</a></li>
-            <li><a href="#">しないと</a></li>
-            <li><a href="#">やりたい</a></li>
-            <li><a href="#">そのうち</a></li>
+                <li><input id="all" type="radio"><label for="all">すべて</label></li>
+                <li><input id="must" type="radio"><label for="must">しないと</label></li>
+                <li><input id="want" type="radio"><label for="want">やりたい</label></li>
+                <li><input id="eventually" type="radio"><label for="eventually">そのうち</label></li>
             </ul>
         </div>
+
+
         <div id="main">
         <section>
         <div class="must">
