@@ -93,9 +93,7 @@ li input[type="radio"] {
     display:none; 
 }
 
-
-
-#nav li input label{
+#nav li label{
     color: #546474;
     font-size: 0.7em;
     text-decoration: none;
