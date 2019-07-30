@@ -29,6 +29,7 @@ input {
     height: 30px;
     margin: 0.5em auto;
     border-radius: 0.38em;
+    font-size: 1.1em;
     white-space: pre-line;
     word-break: break-all;
 }
@@ -46,9 +47,5 @@ a {
     width: 240px;
     color: #bcccd9;
     margin: 0 30%;
-    text-align: center;
-}
-
-span {
-    /* text-align: right; */
+    padding: 0 auto;
 }
