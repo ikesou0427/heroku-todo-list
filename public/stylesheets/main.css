@@ -74,14 +74,14 @@ button:active {
     margin-bottom: 0;
 }
  
-/* #nav li {
+#nav li {
     width: 15%;
     text-align: center;
     display: inline-block;
     border: 2px solid #bcccd9;
     padding: 0.5em;
     border-radius: 0.67em;
-} */
+}
 /*  
 #nav li a {
     color: #546474;
@@ -94,13 +94,14 @@ li input[type="radio"] {
 }
 
 
+
 #nav li input label{
-    width: 15%;
+    /* width: 15%;
     text-align: center;
     display: inline-block;
     border: 2px solid #bcccd9;
     padding: 0.5em;
-    border-radius: 0.67em;
+    border-radius: 0.67em; */
 }
 
 footer {
