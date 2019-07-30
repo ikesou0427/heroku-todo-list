@@ -22,7 +22,8 @@ h3 {
 }
 
 #main {
-    border: 1px solid #546474;
+    border: solid #546474;
+    border-width: 0 1px 0 1px;
 }
 
 .list {
@@ -86,7 +87,7 @@ button:active {
 #nav li label{
     text-align: center;
     border: solid #546474;
-    border-width: 2px 2px 0 2px;
+    border-width: 1px 1px 0 1px;
     border-radius: 0.67em 0.67em 0 0;
     padding: 0.5em;
     color: #546474;
