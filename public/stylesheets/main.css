@@ -93,9 +93,12 @@ footer {
         padding-right: 10px;
         border-left: 7px solid #9193a0;
     }
-    label:after,#new:after {
+    label:after{
         content: "\A" ;
         white-space: pre-wrap ;
+    }
+    #new::after {
+        content: "hoge"
     }
     button {
         margin-top: 1em;
