@@ -38,7 +38,7 @@ section {
 }
 
 #select {
-    border: 2px solid #C0C0C0;
+    border: 2px solid;
     padding: 0.3em;
     border-radius: 0.67em;
 }
