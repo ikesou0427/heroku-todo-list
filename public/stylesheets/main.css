@@ -74,20 +74,16 @@ footer {
     body {
         height: 100vh;
     }
-
     #main {
         width: 90%;
         height: 80vh;
         overflow: auto;
-        padding-top: -2em;
         padding-left: 1em;
         border: 1px solid #cccccc;
     }
-
     #wrap {
         width: 100%;
     }
-
     section {
         display: inline;
         vertical-align:  baseline; 
@@ -97,11 +93,13 @@ footer {
         padding-right: 10px;
         border-left: 7px solid #9193a0;
     }
-
+    label:after {
+        content: "\A" ;
+        white-space: pre-wrap ;
+    }
     button {
         margin-top: 1em;
     }
-
     footer {
         padding: 5px 0;
         margin: 20px 0 0;
