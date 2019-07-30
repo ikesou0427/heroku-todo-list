@@ -42,6 +42,8 @@ button {
 }
 
 a {
+    width: 240px;
     text-align: right;
     color: #bcccd9;
+    margin: 0 auto;
 }
