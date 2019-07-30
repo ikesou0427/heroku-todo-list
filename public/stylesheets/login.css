@@ -43,9 +43,14 @@ button {
     border-radius: 0.38em;
 }
 
-a {
+#sign_up {
     width: 240px;
-    margin-left: 70%;
+    height: 20px;
+    margin: o auto;
+}
+a {
+    /* width: 240px; */
+    /* margin-left: 70%; */
     color: #bcccd9;
     font-family: 'Bitter', serif;
 }
