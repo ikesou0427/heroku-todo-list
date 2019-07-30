@@ -73,7 +73,7 @@ button:active {
 }
  
 #nav li {
-    width: 140px;
+    width: 20%;
     text-align: center;
     display: inline-block;
     border: 2px solid #bcccd9;
