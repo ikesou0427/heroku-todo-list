@@ -53,5 +53,7 @@ a {
     /* margin-left: 70%; */
     color: #bcccd9;
     font-family: 'Bitter', serif;
+}
+span {
     text-align: right;
 }
