@@ -49,7 +49,7 @@ router.get('/', (req, res) => {
             })
             .catch(err => {
                 console.error(err);
-                req.session.message = 'There was a problem with your login.';
+                req.session.message = 'ログイン時にエラーが発生しました';
                 return res.redirect('/login');
             });
     });
@@ -76,7 +76,7 @@ router.post('/new', (req, res) => {
             })
             .catch(err => {
                 console.error(err);
-                req.session.message = 'There was a problem.';
+                req.session.message = '問題が発生しました';
                 return res.redirect('/main');
             });
     });

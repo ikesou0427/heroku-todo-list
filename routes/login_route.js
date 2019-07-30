@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 router.post('/signIn', (req, res) => {
     //入力チェック
     if (!common.checkInputString(req.body.userId, 3, 10) || !common.checkInputString(req.body.password, 6, 16)) {
-        req.session.message = 'Please type using half-width characters.';
+        req.session.message = '半角英数のみを使用してください';
         req.session.userId = '';
         req.session.password = '';
         return res.redirect('/login');
@@ -33,7 +33,7 @@ router.post('/signIn', (req, res) => {
         client.query(sql)
             .then(result => {
                 if (result.rowCount == 0) {
-                    req.session.message = 'There was a problem with your login.';
+                    req.session.message = 'ログイン時にエラーが発生しました';
                     return res.redirect('/login');
                 } else {
                     req.session.userId = req.body.userId;
@@ -80,7 +80,7 @@ router.post('/sign_up/do', (req, res) => {
             })
             .catch(err => {
                 console.error(err);
-                req.session.message = 'The userID is already in use.';
+                req.session.message = 'そのユーザーIDはすでに使用されています';
                 return res.redirect('/login/sign_up');
             });
     });
