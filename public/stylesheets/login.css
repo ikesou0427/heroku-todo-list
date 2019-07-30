@@ -37,6 +37,7 @@ button {
     height: 40px;
     color: #ffffff;
     background-color: #9aadbe;
+    font-size: 1.2em;
     margin: 0.5em auto;
     border-radius: 0.38em;
 }
@@ -45,7 +46,7 @@ a {
     width: 240px;
     color: #bcccd9;
     margin: 0 30%;
-    /* text-align: right; */
+    text-align: center;
 }
 
 span {
