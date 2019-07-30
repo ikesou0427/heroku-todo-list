@@ -39,15 +39,24 @@ section {
 
 #select {
     border: 2px solid #C0C0C0;
-    padding: 0.5em;
+    padding: 0.3em;
     border-radius: 0.67em;
 }
 button {
-    display: inline-block;
-    padding: 7px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    color: #C0C0C0;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #C0C0C0;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
 }
 
 footer {
