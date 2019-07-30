@@ -47,6 +47,7 @@ button {
     width: 240px;
     height: 20px;
     margin: 0 auto;
+    padding: 0 0 0 auto;
 }
 a {
     margin:0;
