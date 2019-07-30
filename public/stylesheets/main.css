@@ -46,9 +46,8 @@ button {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  background: #668ad8;/*ボタン色*/
-  color: #C0C0C0;
-  border-bottom: solid 4px #627295;
+  background: #C0C0C0;
+  border-bottom: solid 4px #9fa2a8;
   border-radius: 3px;
 }
 
