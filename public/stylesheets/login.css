@@ -18,6 +18,10 @@ h1 {
     /* padding:  */
 }
 
+form {
+    margin: 0 auto;
+}
+
 input {
     width: 240px;
     height: 30px;
