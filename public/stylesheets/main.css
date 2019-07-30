@@ -97,7 +97,7 @@ footer {
         content: "\A" ;
         white-space: pre-wrap ;
     }
-    #new::after {
+    #new:after {
         content: "hoge"
     }
     button {
