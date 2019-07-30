@@ -16,18 +16,21 @@ $(function () {
     $('.list').droppable({
         accept: '.list-content',
         drop: function (e, ui) {
+            let self = $(this);
+
+            let before_change_attr = $(ui)[0].helper[0].classList[1]; //移動前属性
+            let after_change_attr = self.children("p")[0].classList[1]; //移動後属性
+            // 移動ごと移動前の場所が同じなら変更しない
+            if (before_change_attr == after_change_attr) {
+                return;
+            }
+
             $(ui.helper[0]).css({
                 'display': 'none'
             });
             $(ui.helper[0]).prev('input').css({
                 'display': 'none'
             });
-            
-            let self = $(this);
-            let attr = self.children("p")[0].classList[1];
-
-            console.log($(ui)[0].helper[0].classList[1]); //移動まえ
-            console.log(self.children("p")[0].classList[1]); //移動後
             setTimeout(function () {
                 self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
             }, 200);
@@ -37,7 +40,7 @@ $(function () {
                 type: 'POST',
                 data: {
                     'id': $(ui)[0].helper[0].attributes[1].value,
-                    'attr': attr
+                    'attr': after_change_attr
                 }
             })
                 .done(data => {
