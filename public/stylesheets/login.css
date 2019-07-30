@@ -30,6 +30,7 @@ input {
     margin: 0.5em auto;
     border-radius: 0.38em;
     font-size: 1.1em;
+    font-family: 'Bitter', serif;
     white-space: pre-line;
     word-break: break-all;
 }
