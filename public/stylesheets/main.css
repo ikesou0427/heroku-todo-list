@@ -79,7 +79,8 @@ footer {
         width: 90%;
         height: 80vh;
         overflow: auto;
-        margin-left: 1em;
+        padding-top: -2em;
+        padding-left: 1em;
         border: 1px solid #cccccc;
     }
 
