@@ -82,6 +82,7 @@ button:active {
 }
  
 #nav li a {
+    color: #546474;
     text-decoration: none;
     font-weight: bold;
 }
