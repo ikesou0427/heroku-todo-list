@@ -93,7 +93,7 @@ footer {
     h3:before {
         content: "";
         padding-right: 10px;
-        border-left: 7px solid #9cb4a4;
+        border-left: 7px solid #e4f0fc;
     }
 
     button {
