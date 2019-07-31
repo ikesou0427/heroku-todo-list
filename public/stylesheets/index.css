@@ -34,6 +34,10 @@ a {
         width: 100%;
     }
 
+    h2 {
+        font-size: 1.4em;
+    }
+
     #content {
         margin: 30% 5% 0 5%;
     }
