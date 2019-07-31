@@ -14,12 +14,16 @@ body {
 
 h2 {
     font-family: 'Bitter', serif;
+    font-size: 3em;
 }
 #content {
     margin-top: 160px;
-    font-family: 'Bitter', serif;
 }
 
+p {
+    font-family: 'Bitter', serif;
+    font-size: 3em;
+}
 a {
     color: #000000;
     font-family: 'Bitter', serif;
