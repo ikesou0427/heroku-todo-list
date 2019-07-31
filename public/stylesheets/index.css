@@ -37,4 +37,8 @@ a {
     #content {
         margin: 30% 5% 0 5%;
     }
+
+    p {
+        font-size: 1em;
+    }
 }
