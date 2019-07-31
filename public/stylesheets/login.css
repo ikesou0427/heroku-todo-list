@@ -30,6 +30,11 @@ h1 {
     text-align: center;
 }
 
+#massage {
+    width: 240px;
+    margin: 0 auto;
+}
+
 form {
     width: 240px;
     margin: 0 auto;
