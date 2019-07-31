@@ -25,6 +25,7 @@ p {
     font-size: 3em;
 }
 a {
+    font-size: 1.3em;
     color: #58656e;
     font-family: 'Bitter', serif;
 }
@@ -43,6 +44,10 @@ a {
     }
 
     p {
+        font-size: 1em;
+    }
+
+    a{
         font-size: 1em;
     }
 }
