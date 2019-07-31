@@ -25,27 +25,8 @@ p {
     font-size: 3em;
 }
 a {
-    color: #000000;
+    color: #9aadbe;
     font-family: 'Bitter', serif;
-}
-
-.btn a {
-    display: block;
-    background-color: #9aadbe;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: 'Bitter', serif;
-    width: 185px;
-    text-align: center;
-    line-height: 50px;
-    margin-top: 20px;
-    border-radius: 5px;
-    border: 3px solid #9aadbe;
-}
-.btn a:hover {
-    text-decoration: none;
-    background-color: #ffffff;
-    color: #9aadbe;   
 }
 
 @media screen and (max-width:480px) {
