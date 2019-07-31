@@ -3,7 +3,6 @@
 body {
     width: 960px;
     height: 100%;
-    font-family: 'Bitter', serif;
     margin: 0 auto;
     background-color: transparent;
     background-image :url(../images/5FEKY7aTWFj0Ous1564581076_1564581173.jpg);
@@ -13,8 +12,12 @@ body {
     background-size: cover;
 }
 
+h2 {
+    font-family: 'Bitter', serif;
+}
 #content {
     margin-top: 160px;
+    font-family: 'Bitter', serif;
 }
 
 @media screen and (max-width:480px) {
