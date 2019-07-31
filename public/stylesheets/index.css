@@ -11,3 +11,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+#content {
+    margin-top: 160px;
+}
