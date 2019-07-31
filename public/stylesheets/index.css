@@ -15,3 +15,13 @@ body {
 #content {
     margin-top: 160px;
 }
+
+@media screen and (max-width:480px) {
+    body {
+        width: 100%;
+    }
+
+    #content {
+        margin: 30% 1em 1em 0;
+    }
+}
