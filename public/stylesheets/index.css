@@ -1,19 +1,9 @@
 @charset "utf-8";
 
 body {
-    background-image :url(../images/MS251_memotonewsp_TP_V.jpg);
+    background-image :url(../images/5FEKY7aTWFj0Ous1564581076_1564581173.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-}
-
-body::before{
-	background-color: rgba(0,0,0,0.5);
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	content: ' ';
 }
