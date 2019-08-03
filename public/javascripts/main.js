@@ -1,59 +1,59 @@
 $(function () {
-    // let moveVal = '';
-    // let movecontent = '';
+    let moveVal = '';
+    let movecontent = '';
 
-    // $('.list-content').draggable({
-    //     containment: "#main",
-    //     revert: true,
-    //     revertDuration: 1,
-    //     scroll: true,
-    //     stop: function (event, ui) {
-    //         moveVal = $(this)[0].attributes[1].value;
-    //         movecontent = $(this).text();
-    //     }
-    // });
+    $('.list-content').draggable({
+        containment: "#main",
+        revert: true,
+        revertDuration: 1,
+        scroll: true,
+        stop: function (event, ui) {
+            moveVal = $(this)[0].attributes[1].value;
+            movecontent = $(this).text();
+        }
+    });
 
-    // $('.list').droppable({
-    //     accept: '.list-content',
-    //     drop: function (e, ui) {
-    //         let self = $(this);
+    $('.list').droppable({
+        accept: '.list-content',
+        drop: function (e, ui) {
+            let self = $(this);
 
-    //         let before_change_attr = $(ui)[0].helper[0].classList[1]; //移動前属性
-    //         let after_change_attr = self.children("p")[0].classList[1]; //移動後属性
-    //         // 移動ごと移動前の場所が同じなら変更しない
-    //         if (before_change_attr == after_change_attr) {
-    //             return;
-    //         }
+            let before_change_attr = $(ui)[0].helper[0].classList[1]; //移動前属性
+            let after_change_attr = self.children("p")[0].classList[1]; //移動後属性
+            // 移動ごと移動前の場所が同じなら変更しない
+            if (before_change_attr == after_change_attr) {
+                return;
+            }
 
-    //         $(ui.helper[0]).css({
-    //             'display': 'none'
-    //         });
-    //         $(ui.helper[0]).prev('input').css({
-    //             'display': 'none'
-    //         });
-    //         setTimeout(function () {
-    //             self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
-    //         }, 200);
+            $(ui.helper[0]).css({
+                'display': 'none'
+            });
+            $(ui.helper[0]).prev('input').css({
+                'display': 'none'
+            });
+            setTimeout(function () {
+                self.parent().append(`<input class="list-checkbox" type="checkbox" value=${moveVal}><p class="list-content" value=${moveVal}>${movecontent}</p>`);
+            }, 200);
 
-    //         $.ajax({
-    //             url: '/main/change',
-    //             type: 'POST',
-    //             data: {
-    //                 'id': $(ui)[0].helper[0].attributes[1].value,
-    //                 'attr': after_change_attr
-    //             }
-    //         })
-    //             .done(data => {
-    //                 console.log(data);
-    //             })
-    //             .fail(data => {
-    //                 console.log(data);
-    //             })
-    //             .always(data => {
+            $.ajax({
+                url: '/main/change',
+                type: 'POST',
+                data: {
+                    'id': $(ui)[0].helper[0].attributes[1].value,
+                    'attr': after_change_attr
+                }
+            })
+                .done(data => {
+                    console.log(data);
+                })
+                .fail(data => {
+                    console.log(data);
+                })
+                .always(data => {
 
-    //             });
-    //     }
-    // });
+                });
+        }
+    });
 
     $(document).on('click', '.list-checkbox', function () {
         let self = $(this);

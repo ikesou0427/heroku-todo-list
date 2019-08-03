@@ -21,3 +21,20 @@ exports.checkInputString = (str, minLength, maxLength) => {
 exports.checkJaAndEn = str => {
     return (str.match(/^[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf-A-Za-z0-9]+$/)) ? true : '';
 }
+
+// https://gist.github.com/orleika/45ae49db4066f577fc7b  author:orleika
+exports.getIP = req => {
+    if (req.headers['x-forwarded-for']) {
+        return req.headers['x-forwarded-for'];
+    }
+    if (req.connection && req.connection.remoteAddress) {
+        return req.connection.remoteAddress;
+    }
+    if (req.connection.socket && req.connection.socket.remoteAddress) {
+        return req.connection.socket.remoteAddress;
+    }
+    if (req.socket && req.socket.remoteAddress) {
+        return req.socket.remoteAddress;
+    }
+    return '0.0.0.0';
+};
