@@ -76,9 +76,7 @@ router.post('/new', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
-                console.log('hoge')
                 done();
-                console.log('huga');
                 return res.redirect('/main');
             })
             .catch(err => {
@@ -133,7 +131,6 @@ router.post('/end', (req, res) => {
             });
     });
 });
-
 
 
 module.exports = router;
