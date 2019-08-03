@@ -37,8 +37,8 @@ router.get('/', (req, res) => {
                     } else {
                         e[0].push(result.rows[i].contents);
                         e[1].push(result.rows[i].id);
-                    };
-                };
+                    }
+                }
                 return res.render('main.ejs', {
                     message: message,
                     m: m,
@@ -71,14 +71,16 @@ router.post('/new', (req, res) => {
     };
     pool.connect((err, client, done) => {
         client.query(sql)
-            .then(() => {
+            .then(result => {
+                done();
+                return res.redirect('/main');
             })
             .catch(err => {
+                done();
                 console.error(err);
                 req.session.message = '問題が発生しました';
+                return res.redirect('/main');
             });
-        done();
-        return res.redirect('/main');
     });
 });
 
@@ -93,16 +95,16 @@ router.post('/change', (req, res) => {
         values: [req.body.attr, req.body.id]
     };
     pool.connect((err, client, done) => {
-        let response = 'failure';
         client.query(sql)
-            .then(() => {
-                response = 'success';
+            .then(result => {
+                done();
+                return res.json('success');
             })
             .catch(err => {
+                done();
                 console.error(err);
+                return res.json('Failure');
             });
-        done();
-        return res.json(response);
     });
 });
 
@@ -118,16 +120,16 @@ router.post('/end', (req, res) => {
     };
 
     pool.connect((err, client, done) => {
-        let response = 'failure';
         client.query(sql)
-            .then(()=> {
-                response = 'success';
+            .then(result => {
+                done();
+                return res.json('success');
             })
             .catch(err => {
+                done();
                 console.error(err);
+                return res.json('Failure');
             });
-        done();        
-        return res.json(response);
     });
 });
 

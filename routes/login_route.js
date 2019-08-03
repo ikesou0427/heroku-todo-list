@@ -33,24 +33,24 @@ router.post('/sign_in', (req, res) => {
         values: [req.body.userId, req.body.password]
     };
     pool.connect((err, client, done) => {
-        let redirect = '/login';
         client.query(sql)
             .then(result => {
+                done();
                 if (result.rowCount == 0) {
                     req.session.message = 'ログイン時にエラーが発生しました';
+                    return res.redirect('/login');
                 } else {
                     req.session.userId = req.body.userId;
                     req.session.password = req.body.password;
-                    redirect = '/';
+                    return res.redirect('/');
                 };
             })
             .catch(err => {
+                done();
                 console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
+                return res.redirect('/login');
             });
-        done();
-        console.log(redirect);
-        return res.redirect(redirect);
     });
 });
 
@@ -80,21 +80,21 @@ router.post('/sign_up/do', (req, res) => {
         values: [req.body.newUserId, req.body.newPassword,ip_addr]
     };
     pool.connect((err, client, done) => {
-        let redirect = '/login/sign_up';
         client.query(sql)
             .then(result => {
+                done();
                 if (result.rowCount > 0) {
                     req.session.userId = req.body.newUserId;
                     req.session.password = req.body.newPassword;
-                    redirect = '/';
+                    return res.redirect('/');
                 };
             })
             .catch(err => {
+                done();
                 console.error(err);
                 req.session.message = 'そのユーザーIDはすでに使用されています';
+                return res.redirect('/login/sign_up');
             });
-        done();
-        return res.redirect(redirect);
     });
 });
 
