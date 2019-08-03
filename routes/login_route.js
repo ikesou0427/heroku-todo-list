@@ -25,12 +25,13 @@ router.post('/signIn', (req, res) => {
         req.session.message = '半角英数のみを使用してください';
         req.session.userId = '';
         req.session.password = '';
-        console.log(common.getIP(req));
-        console.log(req);
         return res.redirect('/login');
     };
 
-    let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
+    let sql = {
+        text: 'SELECT * FROM tb_users WHERE user_id = $1 AND password = $2',
+        values: [req.body.userId, req.body.password]
+    };
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
@@ -72,7 +73,12 @@ router.post('/sign_up/do', (req, res) => {
         return res.redirect('/login/sign_up');
     };
 
-    let sql = `INSERT INTO tb_users (user_id ,password) VALUES (\'${req.body.newUserId}\' , \'${req.body.newPassword}\');`;
+    let ip_addr = common.getIP(req);
+
+    let sql = {
+        text: 'INSERT INTO tb_users (user_id ,password,ip_addr) VALUES ($1 ,$2, $3)',
+        values: [req.body.newUserId, req.body.newPassword,ip_addr]
+    };
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
