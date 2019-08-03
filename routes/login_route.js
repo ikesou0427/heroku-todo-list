@@ -49,6 +49,7 @@ router.post('/sign_in', (req, res) => {
                 req.session.message = 'ログイン時にエラーが発生しました';
             });
         done();
+        console.log(redirect);
         return res.redirect(redirect);
     });
 });
