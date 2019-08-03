@@ -46,6 +46,7 @@ router.post('/signIn', (req, res) => {
             .catch(err => {
                 console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
+                console.log('hoge');
                 client.end();
                 return res.redirect('/login');
             });
