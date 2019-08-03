@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 //todo ログイン失敗回数を数えて、制限をかける
 // sign-in
-router.post('/signIn', (req, res) => {
+router.post('/sign_in', (req, res) => {
     //入力チェック
     if (!common.checkInputString(req.body.userId, 3, 10) || !common.checkInputString(req.body.password, 6, 16)) {
         req.session.message = '半角英数のみを使用してください';
@@ -33,24 +33,23 @@ router.post('/signIn', (req, res) => {
         values: [req.body.userId, req.body.password]
     };
     pool.connect((err, client, done) => {
+        let redirect = '/login';
         client.query(sql)
             .then(result => {
-                done();
                 if (result.rowCount == 0) {
                     req.session.message = 'ログイン時にエラーが発生しました';
-                    return res.redirect('/login');
                 } else {
                     req.session.userId = req.body.userId;
                     req.session.password = req.body.password;
-                    return res.redirect('/');
+                    redirect = '/';
                 };
             })
             .catch(err => {
-                done();
                 console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
-                return res.redirect('/login');
             });
+        done();
+        return res.redirect(redirect);
     });
 });
 
@@ -80,21 +79,21 @@ router.post('/sign_up/do', (req, res) => {
         values: [req.body.newUserId, req.body.newPassword,ip_addr]
     };
     pool.connect((err, client, done) => {
+        let redirect = '/login/sign_up';
         client.query(sql)
             .then(result => {
-                done();
                 if (result.rowCount > 0) {
                     req.session.userId = req.body.newUserId;
                     req.session.password = req.body.newPassword;
-                    return res.redirect('/');
+                    redirect = '/';
                 };
             })
             .catch(err => {
-                done();
                 console.error(err);
                 req.session.message = 'そのユーザーIDはすでに使用されています';
-                return res.redirect('/login/sign_up');
             });
+        done();
+        return res.redirect(redirect);
     });
 });
 

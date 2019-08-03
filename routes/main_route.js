@@ -18,12 +18,10 @@ router.get('/', (req, res) => {
     req.session.message = '';
 
     // todo:userid check
-    let sql = `
-    SELECT id,contents,attribute 
-        FROM todo
-        WHERE status != 0
-        AND user_id = \'${req.session.userId}\';`
-    
+    let sql = {
+        text: 'SELECT id,contents,attribute FROM todo WHERE status != $1 AND user_id = $2',
+        values: [0, req.session.userId]
+    };
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
@@ -39,8 +37,8 @@ router.get('/', (req, res) => {
                     } else {
                         e[0].push(result.rows[i].contents);
                         e[1].push(result.rows[i].id);
-                    }
-                }
+                    };
+                };
                 return res.render('main.ejs', {
                     message: message,
                     m: m,
@@ -67,22 +65,20 @@ router.post('/new', (req, res) => {
         return res.redirect('/main');
     }
 
-    let sql = `
-    INSERT INTO todo (user_id,contents,attribute)
-        VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
-    `
+    let sql = {
+        text: 'INSERT INTO todo(user_id, contents, attribute) VALUES($1,$2,$3)',
+        values: [req.session.userId, req.body.content, req.body.attribute]
+    };
     pool.connect((err, client, done) => {
         client.query(sql)
-            .then(result => {
-                done();
-                return res.redirect('/main');
+            .then(() => {
             })
             .catch(err => {
-                done();
                 console.error(err);
                 req.session.message = '問題が発生しました';
-                return res.redirect('/main');
             });
+        done();
+        return res.redirect('/main');
     });
 });
 
@@ -92,18 +88,21 @@ router.post('/change', (req, res) => {
         return res.redirect('/login');
     };
 
-    let sql = `UPDATE todo SET attribute = \'${req.body.attr}\' WHERE id = \'${req.body.id}\';`
+    let sql = {
+        text: 'UPDATE todo SET attribute = $1 WHERE id = $2',
+        values: [req.body.attr, req.body.id]
+    };
     pool.connect((err, client, done) => {
+        let response = 'failure';
         client.query(sql)
-            .then(result => {
-                done();
-                return res.json('success');
+            .then(() => {
+                response = 'success';
             })
             .catch(err => {
-                done();
                 console.error(err);
-                return res.json('Failure');
             });
+        done();
+        return res.json(response);
     });
 });
 
@@ -113,20 +112,22 @@ router.post('/end', (req, res) => {
         return res.redirect('/login');
     }
 
-    let sql = `
-    UPDATE todo SET status = 0 WHERE id = \'${req.body.id}\';
-    `
+    let sql = {
+        text: 'UPDATE todo SET status = $1 WHERE id = $2',
+        values: [0, req.body.id]
+    };
+
     pool.connect((err, client, done) => {
+        let response = 'failure';
         client.query(sql)
-            .then(result => {
-                done();
-                return res.json('success');
+            .then(()=> {
+                response = 'success';
             })
             .catch(err => {
-                done();
                 console.error(err);
-                return res.json('Failure');
             });
+        done();        
+        return res.json(response);
     });
 });
 
