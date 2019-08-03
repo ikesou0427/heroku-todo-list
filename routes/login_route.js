@@ -35,12 +35,10 @@ router.post('/signIn', (req, res) => {
                 done();
                 if (result.rowCount == 0) {
                     req.session.message = 'ログイン時にエラーが発生しました';
-                    client.end();
                     return res.redirect('/login');
                 } else {
                     req.session.userId = req.body.userId;
                     req.session.password = req.body.password;
-                    client.end();
                     return res.redirect('/');
                 };
             })
@@ -48,7 +46,6 @@ router.post('/signIn', (req, res) => {
                 done();
                 console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
-                client.end();
                 return res.redirect('/login');
             });
     });
@@ -81,7 +78,6 @@ router.post('/sign_up/do', (req, res) => {
                 if (result.rowCount > 0) {
                     req.session.userId = req.body.newUserId;
                     req.session.password = req.body.newPassword;
-                    client.end();
                     return res.redirect('/');
                 };
             })
@@ -89,7 +85,6 @@ router.post('/sign_up/do', (req, res) => {
                 done();
                 console.error(err);
                 req.session.message = 'そのユーザーIDはすでに使用されています';
-                client.end();
                 return res.redirect('/login/sign_up');
             });
     });

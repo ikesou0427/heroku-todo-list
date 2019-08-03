@@ -77,14 +77,12 @@ router.post('/new', (req, res) => {
         client.query(sql)
             .then(result => {
                 done();
-                client.end();
                 return res.redirect('/main');
             })
             .catch(err => {
                 done();
                 console.error(err);
                 req.session.message = '問題が発生しました';
-                client.end();
                 return res.redirect('/main');
             });
     });
@@ -101,13 +99,11 @@ router.post('/change', (req, res) => {
         client.query(sql)
             .then(result => {
                 done();
-                client.end();
                 return res.json('success');
             })
             .catch(err => {
                 done();
                 console.error(err);
-                client.end();
                 return res.json('Failure');
             });
     });
@@ -126,13 +122,11 @@ router.post('/end', (req, res) => {
         client.query(sql)
             .then(result => {
                 done();
-                client.end();
                 return res.json('success');
             })
             .catch(err => {
                 done();
                 console.error(err);
-                client.end();
                 return res.json('Failure');
             });
     });
