@@ -27,6 +27,7 @@ router.get('/', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                done();
                 let m = [[], []], w = [[], []], e = [[], []];
                 for (let i = 0; i < result.rowCount; i++){
                     if (result.rows[i].attribute == 'm') {
@@ -49,6 +50,7 @@ router.get('/', (req, res) => {
                 });
             })
             .catch(err => {
+                done();
                 console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
                 client.end();
@@ -74,10 +76,12 @@ router.post('/new', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                done();
                 client.end();
                 return res.redirect('/main');
             })
             .catch(err => {
+                done();
                 console.error(err);
                 req.session.message = '問題が発生しました';
                 client.end();
@@ -96,10 +100,12 @@ router.post('/change', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                done();
                 client.end();
                 return res.json('success');
             })
             .catch(err => {
+                done();
                 console.error(err);
                 client.end();
                 return res.json('Failure');
@@ -119,10 +125,12 @@ router.post('/end', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                done();
                 client.end();
                 return res.json('success');
             })
             .catch(err => {
+                done();
                 console.error(err);
                 client.end();
                 return res.json('Failure');

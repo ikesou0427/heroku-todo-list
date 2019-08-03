@@ -32,6 +32,7 @@ router.post('/signIn', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                done();
                 if (result.rowCount == 0) {
                     req.session.message = 'ログイン時にエラーが発生しました';
                     client.end();
@@ -44,9 +45,9 @@ router.post('/signIn', (req, res) => {
                 };
             })
             .catch(err => {
+                done();
                 console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
-                console.log('hoge');
                 client.end();
                 return res.redirect('/login');
             });
@@ -76,6 +77,7 @@ router.post('/sign_up/do', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                done();
                 if (result.rowCount > 0) {
                     req.session.userId = req.body.newUserId;
                     req.session.password = req.body.newPassword;
@@ -84,6 +86,7 @@ router.post('/sign_up/do', (req, res) => {
                 };
             })
             .catch(err => {
+                done();
                 console.error(err);
                 req.session.message = 'そのユーザーIDはすでに使用されています';
                 client.end();
