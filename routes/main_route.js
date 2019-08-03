@@ -6,12 +6,8 @@ const common = require("../common");
 // DB
 const pg = require("pg");
 const config = require("config");
-const client = new pg.Pool(config.db.postgres);
-client.connect((err) => {
-    if (err) {
-        console.error(err.stack);
-    }
-});
+const pool = new pg.Pool(config.db.postgres);
+
 
 // main page
 router.get('/', (req, res) => {
@@ -28,35 +24,37 @@ router.get('/', (req, res) => {
         WHERE status != 0
         AND user_id = \'${req.session.userId}\';`
     
-    client.query(sql)
-        .then(result => {
-            let m = [[], []], w = [[], []], e = [[], []];
-            for (let i = 0; i < result.rowCount; i++){
-                if (result.rows[i].attribute == 'm') {
-                    m[0].push(result.rows[i].contents);
-                    m[1].push(result.rows[i].id);
-                } else if (result.rows[i].attribute == 'w') {
-                    w[0].push(result.rows[i].contents);
-                    w[1].push(result.rows[i].id);
-                } else {
-                    e[0].push(result.rows[i].contents);
-                    e[1].push(result.rows[i].id);
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                let m = [[], []], w = [[], []], e = [[], []];
+                for (let i = 0; i < result.rowCount; i++){
+                    if (result.rows[i].attribute == 'm') {
+                        m[0].push(result.rows[i].contents);
+                        m[1].push(result.rows[i].id);
+                    } else if (result.rows[i].attribute == 'w') {
+                        w[0].push(result.rows[i].contents);
+                        w[1].push(result.rows[i].id);
+                    } else {
+                        e[0].push(result.rows[i].contents);
+                        e[1].push(result.rows[i].id);
+                    }
                 }
-            }
-            client.end();
-            return res.render('main.ejs', {
-                message: message,
-                m: m,
-                w: w,
-                e: e
+                client.end();
+                return res.render('main.ejs', {
+                    message: message,
+                    m: m,
+                    w: w,
+                    e: e
+                });
+            })
+            .catch(err => {
+                console.error(err);
+                req.session.message = 'ログイン時にエラーが発生しました';
+                client.end();
+                return res.redirect('/login');
             });
-        })
-        .catch(err => {
-            console.error(err);
-            req.session.message = 'ログイン時にエラーが発生しました';
-            client.end();
-            return res.redirect('/login');
-        });
+    });
 });
 
 // register new content
@@ -73,17 +71,19 @@ router.post('/new', (req, res) => {
     INSERT INTO todo (user_id,contents,attribute)
         VALUES (\'${req.session.userId}\',\'${req.body.content}\',\'${req.body.attribute}\');
     `
-    client.query(sql)
-        .then(result => {
-            client.end();
-            return res.redirect('/main');
-        })
-        .catch(err => {
-            console.error(err);
-            req.session.message = '問題が発生しました';
-            client.end();
-            return res.redirect('/main');
-        });
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                client.end();
+                return res.redirect('/main');
+            })
+            .catch(err => {
+                console.error(err);
+                req.session.message = '問題が発生しました';
+                client.end();
+                return res.redirect('/main');
+            });
+    });
 });
 
 // change content
@@ -93,16 +93,18 @@ router.post('/change', (req, res) => {
     };
 
     let sql = `UPDATE todo SET attribute = \'${req.body.attr}\' WHERE id = \'${req.body.id}\';`
-    client.query(sql)
-        .then(result => {
-            client.end();
-            return res.json('success');
-        })
-        .catch(err => {
-            console.error(err);
-            client.end();
-            return res.json('Failure');
-        });
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                client.end();
+                return res.json('success');
+            })
+            .catch(err => {
+                console.error(err);
+                client.end();
+                return res.json('Failure');
+            });
+    });
 });
 
 // finished content
@@ -114,16 +116,18 @@ router.post('/end', (req, res) => {
     let sql = `
     UPDATE todo SET status = 0 WHERE id = \'${req.body.id}\';
     `
-    client.query(sql)
-        .then(result => {
-            client.end();
-            return res.json('success');
-        })
-        .catch(err => {
-            console.error(err);
-            client.end();
-            return res.json('Failure');
-        });
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                client.end();
+                return res.json('success');
+            })
+            .catch(err => {
+                console.error(err);
+                client.end();
+                return res.json('Failure');
+            });
+    });
 });
 
 

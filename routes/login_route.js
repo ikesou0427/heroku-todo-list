@@ -6,12 +6,7 @@ const common = require("../common");
 // DB
 const pg = require("pg");
 const config = require("config");
-const client = new pg.Pool(config.db.postgres);
-client.connect((err) => {
-    if (err) {
-        console.error(err.stack);
-    }
-});
+const pool = new pg.Pool(config.db.postgres);
 
 // login page
 router.get('/', (req, res) => {
@@ -34,25 +29,27 @@ router.post('/signIn', (req, res) => {
     };
 
     let sql = `SELECT * FROM tb_users WHERE user_id = \'${req.body.userId}\' AND password = \'${req.body.password}\'`;
-    client.query(sql)
-        .then(result => {
-            if (result.rowCount == 0) {
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                if (result.rowCount == 0) {
+                    req.session.message = 'ログイン時にエラーが発生しました';
+                    client.end();
+                    return res.redirect('/login');
+                } else {
+                    req.session.userId = req.body.userId;
+                    req.session.password = req.body.password;
+                    client.end();
+                    return res.redirect('/');
+                };
+            })
+            .catch(err => {
+                console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
                 client.end();
                 return res.redirect('/login');
-            } else {
-                req.session.userId = req.body.userId;
-                req.session.password = req.body.password;
-                client.end();
-                return res.redirect('/');
-            };
-        })
-        .catch(err => {
-            console.error(err);
-            req.session.message = 'There was a problem with your login.';
-            client.end();
-            return res.redirect('/login');
-        });
+            });
+    });
 });
 
 // sign-up
@@ -75,21 +72,23 @@ router.post('/sign_up/do', (req, res) => {
     };
 
     let sql = `INSERT INTO tb_users (user_id ,password) VALUES (\'${req.body.newUserId}\' , \'${req.body.newPassword}\');`;
-    client.query(sql)
-        .then(result => {
-            if (result.rowCount > 0) {
-                req.session.userId = req.body.newUserId;
-                req.session.password = req.body.newPassword;
+    pool.connect((err, client, done) => {
+        client.query(sql)
+            .then(result => {
+                if (result.rowCount > 0) {
+                    req.session.userId = req.body.newUserId;
+                    req.session.password = req.body.newPassword;
+                    client.end();
+                    return res.redirect('/');
+                };
+            })
+            .catch(err => {
+                console.error(err);
+                req.session.message = 'そのユーザーIDはすでに使用されています';
                 client.end();
-                return res.redirect('/');
-            };
-        })
-        .catch(err => {
-            console.error(err);
-            req.session.message = 'そのユーザーIDはすでに使用されています';
-            client.end();
-            return res.redirect('/login/sign_up');
+                return res.redirect('/login/sign_up');
             });
+    });
 });
 
 module.exports = router;
