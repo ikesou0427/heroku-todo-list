@@ -26,6 +26,7 @@ router.post('/signIn', (req, res) => {
         req.session.userId = '';
         req.session.password = '';
         console.log(common.getIP(req));
+        console.log(req);
         return res.redirect('/login');
     };
 
