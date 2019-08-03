@@ -72,6 +72,7 @@ router.post('/new', (req, res) => {
     pool.connect((err, client, done) => {
         client.query(sql)
             .then(result => {
+                client.end();
                 return res.redirect('/main');
             })
             .catch(err => {
