@@ -32,6 +32,7 @@ const PORT = process.env.PORT || 5000;
 //###########
 //# routing 
 //###########
+console.log(process.memoryUsage().rss);
 
 const indexRouter = require('./routes/index_route');
 const loginRouter = require('./routes/login_route');
