@@ -41,7 +41,6 @@ router.get('/', (req, res) => {
                         e[1].push(result.rows[i].id);
                     }
                 }
-                client.end();
                 return res.render('main.ejs', {
                     message: message,
                     m: m,
@@ -53,7 +52,6 @@ router.get('/', (req, res) => {
                 done();
                 console.error(err);
                 req.session.message = 'ログイン時にエラーが発生しました';
-                client.end();
                 return res.redirect('/login');
             });
     });
@@ -131,6 +129,7 @@ router.post('/end', (req, res) => {
             });
     });
 });
+
 
 
 module.exports = router;
