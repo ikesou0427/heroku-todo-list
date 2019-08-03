@@ -6,8 +6,8 @@ const common = require("../common");
 // DB
 const pg = require("pg");
 const config = require("config");
-const pool = new pg.Pool(config.db.postgres);
-pool.connect((err) => {
+const client = new pg.Pool(config.db.postgres);
+client.connect((err) => {
     if (err) {
         console.error(err.stack);
     }
@@ -43,6 +43,7 @@ router.get('/', (req, res) => {
                     e[1].push(result.rows[i].id);
                 }
             }
+            client.end();
             return res.render('main.ejs', {
                 message: message,
                 m: m,
@@ -53,6 +54,7 @@ router.get('/', (req, res) => {
         .catch(err => {
             console.error(err);
             req.session.message = 'ログイン時にエラーが発生しました';
+            client.end();
             return res.redirect('/login');
         });
 });
@@ -79,6 +81,7 @@ router.post('/new', (req, res) => {
         .catch(err => {
             console.error(err);
             req.session.message = '問題が発生しました';
+            client.end();
             return res.redirect('/main');
         });
 });
@@ -92,10 +95,12 @@ router.post('/change', (req, res) => {
     let sql = `UPDATE todo SET attribute = \'${req.body.attr}\' WHERE id = \'${req.body.id}\';`
     client.query(sql)
         .then(result => {
+            client.end();
             return res.json('success');
         })
         .catch(err => {
             console.error(err);
+            client.end();
             return res.json('Failure');
         });
 });
@@ -111,10 +116,12 @@ router.post('/end', (req, res) => {
     `
     client.query(sql)
         .then(result => {
+            client.end();
             return res.json('success');
         })
         .catch(err => {
             console.error(err);
+            client.end();
             return res.json('Failure');
         });
 });

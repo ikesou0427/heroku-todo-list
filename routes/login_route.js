@@ -6,8 +6,8 @@ const common = require("../common");
 // DB
 const pg = require("pg");
 const config = require("config");
-const pool = new pg.Pool(config.db.postgres);
-pool.connect((err) => {
+const client = new pg.Pool(config.db.postgres);
+client.connect((err) => {
     if (err) {
         console.error(err.stack);
     }
@@ -38,16 +38,19 @@ router.post('/signIn', (req, res) => {
         .then(result => {
             if (result.rowCount == 0) {
                 req.session.message = 'ログイン時にエラーが発生しました';
+                client.end();
                 return res.redirect('/login');
             } else {
                 req.session.userId = req.body.userId;
                 req.session.password = req.body.password;
+                client.end();
                 return res.redirect('/');
             };
         })
         .catch(err => {
             console.error(err);
             req.session.message = 'There was a problem with your login.';
+            client.end();
             return res.redirect('/login');
         });
 });
@@ -77,12 +80,14 @@ router.post('/sign_up/do', (req, res) => {
             if (result.rowCount > 0) {
                 req.session.userId = req.body.newUserId;
                 req.session.password = req.body.newPassword;
+                client.end();
                 return res.redirect('/');
             };
         })
         .catch(err => {
             console.error(err);
             req.session.message = 'そのユーザーIDはすでに使用されています';
+            client.end();
             return res.redirect('/login/sign_up');
             });
 });
