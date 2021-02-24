@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+body {
+    width: 960px;
+    margin: 160px auto 0 auto;
+    background-color: #bcccd9;
+}
+@media screen and (max-width:480px) {
+    body {
+        width: 100%;
+        margin-top: 25%;
+    }
+}
+
+section {
+    margin: 0 30%;
+    padding: 7px 0;
+    background-color: #ffffff;
+    border-radius: 0.67em;
+}
+@media screen and (max-width:480px) {
+    section {
+        margin: 0 1em;
+    }
+}
+
+h1 {
+    font-size: 1.4em;
+    font-family: 'Bitter', serif;
+    text-align: center;
+}
+
+#message {
+    width: 240px;
+    margin: 0 auto;
+}
+@media screen and (max-width:480px) {
+    #message {
+        font-size: 0.8em;
+    }
+}
+
+form {
+    width: 240px;
+    margin: 0 auto;
+}
+
+input {
+    width: 240px;
+    height: 30px;
+    margin: 0.5em auto;
+    border-radius: 0.38em;
+    font-size: 1.1em;
+    font-family: 'Bitter', serif;
+    white-space: pre-line;
+    word-break: break-all;
+}
+button {
+    width: 240px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #9aadbe;
+    font-size: 1.2em;
+    margin: 0.5em auto;
+    border-radius: 0.38em;
+}
+
+#sign_up,#login {
+    width: 240px;
+    height: 20px;
+    margin: 0 auto;
+}
+
+a {
+    color: #bcccd9;
+}

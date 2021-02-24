@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>サインアップ</title>
+        <%-include('./header')%>
+        <link rel="stylesheet" href="/stylesheets/login.css">
+    </head>
+
+    <body>
+    <section>
+    <h1>サインアップ</h1>
+    <p id="message"><%=message%></p>
+    <form action="/login/sign_up/do" method="post">
+        <input type="text" name="newUserId" class="name" placeholder="UserID" minlength="3" maxlength="10" required>
+        <input type="password" name="newPassword" class="email" placeholder="Password" minlength="6" maxlength="16" required>
+        <button type="submit" class="btn">サインアップ</button>
+    </form>
+    <div id="login">
+        <a href="/login"><span>ログイン</span></a>
+    </div>
+    </section>
+    </body>
+</html>

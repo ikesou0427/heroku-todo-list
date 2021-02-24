@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+body {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: transparent;
+    background-image :url(../images/5FEKY7aTWFj0Ous1564581076_1564581173.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h2 {
+    font-family: 'Bitter', serif;
+    font-size: 3em;
+}
+#content {
+    margin-top: 160px;
+}
+
+p {
+    font-family: 'Bitter', serif;
+    font-size: 3em;
+}
+a {
+    color: #000000;
+    font-size: 1.5em;
+    font-family: 'Bitter', serif;
+}
+
+@media screen and (max-width:480px) {
+    body {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    #content {
+        margin: 30% 5% 0 5%;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    a{
+        font-size: 1em;
+    }
+}
